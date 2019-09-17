@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import {reducer} from './store/reducers';
-import './index.css';
+import './scss/index.scss';
 import App from './App';
 
 
