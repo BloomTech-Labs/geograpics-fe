@@ -22,7 +22,7 @@ const HelloWorld = () => {
 
   return(
     <div className="modal">
-      <h1>Welcome to the App</h1>
+      <h1>Geograpics</h1>
         <form onSubmit={handleSubmit}>
           <div className="group">
             <input type="text" name="username" id="username" placeholder="username" onChange={onChangeHandler} value={formFields.username} />
