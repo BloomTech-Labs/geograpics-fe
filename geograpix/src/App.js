@@ -1,14 +1,19 @@
 import React from 'react';
-import './App.css';
+import { Route } from 'react-router-dom';
 import Map from './components/Map';
+
+import Login from './components/Login';
 
 function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-      <Map />
-      </header>
+      <Route exact path="/" component={Login} />
+      <section class="map">
+        <header class="App-header">
+          <Map />
+        </header>
+      </section>
     </div>
   );
 }
