@@ -1,10 +1,12 @@
 .modal {
-  max-width: 280px;
-  max-height: 310px;
+  max-width: 400px;
+  max-height: 260px;
   margin: auto;
   padding: 30px;
   background-color: #fff;
+  text-align: center;
   border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.25), 0 0 20px rgba(0,0,0,0.25);
   position: absolute;
   top: 0;
   right: 0;
@@ -17,9 +19,25 @@
     text-align: center;
   }
 
+  button {
+    margin-top: 16px;
+    padding: 10px 20px;
+    font-size: 1.125rem;
+    border: 2px solid #000;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+  }
+
   form {
 
     .group {
+      margin-top: 30px;
       position: relative;
     }
 
@@ -28,14 +46,13 @@
       line-height: 1em;
       position: absolute;
       left: 4px;
-      bottom: 0;
-      transition: bottom 0.25s linear;
+      top: 0;
+      transition: top 0.25s linear;
     }
 
     input {
       width: 100%;
       height: 40px;
-      margin-top: 30px;
       font-size: 1rem;
       padding: 0 10px;
       position: relative;
@@ -44,7 +61,7 @@
 
     input:not(:placeholder-shown) + label,
     input:focus:not(:placeholder-shown) + label {
-      bottom: -18px;
+      top: -18px;
     }
 
     button {
@@ -54,6 +71,68 @@
       padding: 0 10px;
       position: relative;
       z-index: 10;
+    }
+  }
+
+  &.page2 {
+    max-height: 290px;
+
+    form {
+
+      .check {
+        margin-top: 18px;
+        text-align: left;
+        
+        td {
+          vertical-align: top;
+        }
+
+        input, label {
+          box-sizing: content-box;
+        }
+
+        input {
+          width: 20px;
+          height: 20px;
+          margin-top: 0;
+          background: #efefef;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          appearance: none;
+
+          &:before {
+            $width: 14px;
+            $radius: (14/2)px;
+            content: '';
+            margin-top: 2px;
+            margin-left: -6px;
+            width: $width;
+            height: $width;
+            background: #fff;
+            border: 1px solid #999;
+            border-radius: 7px;
+            display: block;
+            transition: margin-left 0.25s ease-in-out;
+            cursor: pointer;
+          }
+
+          &.on {
+            background: rgb(152, 255, 152);
+
+            &:before {
+              margin-left: 10px;
+            }
+          }
+        }
+
+        label {
+          text-align: left;
+          position: static;
+          display: inline-block;
+        }
+      }
+
     }
   }
 }
