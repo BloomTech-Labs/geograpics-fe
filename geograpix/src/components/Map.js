@@ -27,24 +27,23 @@ const Map = (props) => {
             {...viewport} 
             mapboxApiAccessToken="pk.eyJ1IjoibGFtYmRhbGFibWFwIiwiYSI6ImNrMGN4cGhpaDAwbXkzaHF2OWV2ODVqeXUifQ.TMRmQN2yzxAX43K5g7Y2TA"
             mapStyle= "mapbox://styles/lambdalabmap/ck0cxri810ael1dpsew5mayn5"
-            onViewportChange={viewport => { 
+            onViewportChange={viewport => {
             setViewport(viewport);
-            }}
+          }}
         >
-            {props.pictureInfo.map((marker, index) => (
-                <PlotIcon
-                    key={index}  
-                    latitude={marker.latitude}
-                    longitude={marker.longitude}
-                    caption={marker.caption}
-                />
-            ))}
-
+          {props.pictureInfo.map((marker, index) => (
+            <PlotIcon
+              key={index}
+              latitude={marker.latitude}
+              longitude={marker.longitude}
+              caption={marker.caption}
+            />
+          ))}
         </ReactMapGL>
-        </header>
-        </div>
-    );
-}
+      </header>
+    </div>
+  );
+};
 
 const mapStateToProps = state => {
     return{
