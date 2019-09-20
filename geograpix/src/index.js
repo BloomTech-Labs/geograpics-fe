@@ -15,6 +15,10 @@ Sentry.init({dsn: "https://3b2ee787f89b4257bc12a2abe6c13737@sentry.io/1730029"})
 
 const store = createStore(reducer, applyMiddleware(logger, thunk))
 
+/**
+ *  Setup router and redux store for the App
+ */
+
 ReactDOM.render(
     <Router>
         <Provider store={store}>
