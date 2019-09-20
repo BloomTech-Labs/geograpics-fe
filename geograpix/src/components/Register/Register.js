@@ -8,14 +8,17 @@ const Register = () => {
   };
 
   return(
+    <>
+    <div class="overlay"></div>
     <div className="modal">
       <h1>Geograpics</h1>
       <p>
         Donec efficitur porta vulputate. Vivamus porta consectetur lorem, iaculis cursus eros placerat sed.
         Etiam cursus porttitor consequat.
       </p>
-      <button onClick={registerMe}>Login with Instagram</button>
+      <button onClick={registerMe}>Register with Instagram</button>
     </div>
+    </>
   );
 };
 
