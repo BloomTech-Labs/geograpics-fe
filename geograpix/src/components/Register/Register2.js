@@ -26,7 +26,7 @@ const Register2 = props => {
   const handleSubmit =  e => {
       e.preventDefault();
       let id = localStorage.getItem('id');
-      registration(id, { private: isPrivate, email });
+      registration(id, { private: isPrivate, email }, props.history);
   };
 
   const toggleCheck = e => {
