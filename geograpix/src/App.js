@@ -2,13 +2,15 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Map from './components/Map';
 
-import Login from './components/Login';
+import Register from './components/Register/Register';
+import Register2 from './components/Register/Register2';
 
 function App() {
 
   return (
     <div className="App">
-      <Route exact path="/" component={Login} />
+      <Route exact path="/" component={Register} />
+      <Route path="/register/2/" component={Register2} />
       <section class="map">
         <header class="App-header">
           <Map />
@@ -16,6 +18,6 @@ function App() {
       </section>
     </div>
   );
-}
+};
 
 export default App;
