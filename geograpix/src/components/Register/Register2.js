@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { maps } from '../../store/actions/index.js';
+import { registration } from '../../store/actions'
 
 const Register2 = props => {
 
@@ -26,9 +26,7 @@ const Register2 = props => {
   const handleSubmit =  e => {
       e.preventDefault();
       let id = localStorage.getItem('id');
-      //geograpics-staging.herokuapp.com/users/:id
-      axios.put(`//geograpics-staging.herokuapp.com/users/${id}`, { private: isPrivate, email })
-          .then(res => res ? alert('yay') : alert('nay'));
+      registration(id, { private: isPrivate, email });
   };
 
   const toggleCheck = e => {
