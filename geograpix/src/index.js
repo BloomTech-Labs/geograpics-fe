@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as Sentry from '@sentry/browser';
 
-import {reducer} from './store/reducers';
+import reducer from './store/reducers';
 import './scss/index.scss';
 import App from './App';
 

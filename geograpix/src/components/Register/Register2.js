@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { isFlowPredicate } from '@babel/types';
+
+import { maps } from '../../store/actions/index.js';
 
 const Register2 = props => {
 
@@ -33,8 +34,6 @@ const Register2 = props => {
   const toggleCheck = e => {
     setIsPrivate(!isPrivate);
   }
-
-  console.log('stuff', props.match);
 
   return(
     <>
