@@ -67,7 +67,6 @@
       }
     },
     "coverageReporters": ["text"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
