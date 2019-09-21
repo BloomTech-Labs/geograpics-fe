@@ -7,6 +7,7 @@ const Register2 = props => {
 
   const [isPrivate, setIsPrivate] = useState(false);
   const [email, setEmail] = useState();
+  console.log('test')
 
   // useEffect( () => {
   //     let vars = {};

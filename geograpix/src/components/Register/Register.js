@@ -9,7 +9,7 @@ const Register = () => {
 
   return(
     <>
-    <div class="overlay"></div>
+    <div className="overlay"></div>
     <div className="modal">
       <h1>Geograpics</h1>
       <p>

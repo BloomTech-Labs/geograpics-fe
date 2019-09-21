@@ -12,7 +12,12 @@ const Preloader = props => {
         localStorage.setItem('token', vars.token);
         localStorage.setItem('username', vars.username);
         localStorage.setItem('id', vars.userid);
-        props.history.push('/register/2')
+        localStorage.setItem('inDb', vars.inDatabase)
+        if(vars.inDatabase === 'true') {
+            props.history.push('/')
+        } else {
+            props.history.push('/register/2')
+        }
     }, []);
 
     return(
