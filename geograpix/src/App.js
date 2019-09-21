@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/" component={Register} />
-      <Route exact path="/preloader" render={(props) => <Preloader {...props} />} />
+      <Route exact path="/preloader/" component={Preloader} />
       <Route path="/register/2/" component={Register2} />
       <section class="map">
         <header class="App-header">
