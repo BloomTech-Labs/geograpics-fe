@@ -20,7 +20,6 @@ export const Map = props => {
   if (!props.pictureInfo) return <p>Loading...</p>;
   return (
     <div className="map">
-        <h1 className="title">This is map</h1>
       <header className="map-header">
         <ReactMapGL
           {...viewport}
@@ -39,6 +38,7 @@ export const Map = props => {
             />
           ))}
         </ReactMapGL>
+        {/* <h1 className="title">This is map</h1> */}
       </header>
     </div>
   );
