@@ -40,6 +40,7 @@ const Map = (props) => {
             />
           ))}
         </ReactMapGL>
+        {/* <h1 className="title">This is map</h1> */}
       </header>
     </div>
   );

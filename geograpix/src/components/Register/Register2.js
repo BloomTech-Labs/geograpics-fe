@@ -8,15 +8,15 @@ const Register2 = props => {
   const [isPrivate, setIsPrivate] = useState(false);
   const [email, setEmail] = useState();
 
-  useEffect( () => {
-      let vars = {};
-      window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-          vars[key] = value;
-      });
-      localStorage.setItem('token', vars.token);
-      localStorage.setItem('username', vars.username);
-      localStorage.setItem('id', vars.userid);
-  }, []);
+  // useEffect( () => {
+  //     let vars = {};
+  //     window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+  //         vars[key] = value;
+  //     });
+  //     localStorage.setItem('token', vars.token);
+  //     localStorage.setItem('username', vars.username);
+  //     localStorage.setItem('id', vars.userid);
+  // }, []);
 
   const onChangeHandler = e => {
     e.preventDefault();

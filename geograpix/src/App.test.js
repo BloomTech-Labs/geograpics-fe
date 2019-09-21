@@ -27,7 +27,7 @@ const mockPictureInfo = [
   
 let wrapper = shallow(<Map pictureInfo={mockPictureInfo} />)
 
-
+//sample test for sample h1 that is commmented out in Map component
 describe('When the map is rendered', () => {
   it('should render title', () => {
     expect(wrapper.find('.title').text()).toEqual('This is map');
