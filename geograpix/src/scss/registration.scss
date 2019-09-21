@@ -1,3 +1,13 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
 .modal {
   max-width: 400px;
   max-height: 260px;
@@ -5,8 +15,7 @@
   padding: 30px;
   background-color: #fff;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.25), 0 0 20px rgba(0,0,0,0.25);
+  @include border-radius(10);
   position: absolute;
   top: 0;
   right: 0;
@@ -21,16 +30,24 @@
 
   button {
     margin-top: 16px;
-    padding: 10px 20px;
-    font-size: 1.125rem;
-    border: 2px solid #000;
+    padding: 16px 36px;
+    background: linear-gradient(90deg, #4F5BD5 4.79%, #962FBF 26.9%, #D62976 76.54%, #FA7E1E 95.21%);
+    color: #fff;
+    letter-spacing: 0.0125rem;
+    font: bold 1.063rem/1.125em $font-default-stack;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
+    opacity: 0.9;
+    box-shadow: 0 0 0 #FA7E1E;
+    transition: box-shadow 0.25s linear, opacity 0.25s linear;
 
     &:hover {
-      background: #000;
-      color: #fff;
+      cursor: pointer;
+      opacity: 1;
+      box-shadow: 0 0 15px #FA7E1E;
     }
   }
 
@@ -42,8 +59,9 @@
     }
 
     label {
-      font-size: 0.875rem;
-      line-height: 1em;
+      color: #7B7B7B;
+      letter-spacing: 0.0125rem;
+      font: bold 0.875rem/1.143em $font-default-stack;
       position: absolute;
       left: 4px;
       top: 0;
@@ -57,6 +75,8 @@
       padding: 0 10px;
       position: relative;
       z-index: 10;
+      border: 1px solid #D8D8D8;
+      @include border-radius(5);
     }
 
     input:not(:placeholder-shown) + label,
@@ -66,7 +86,7 @@
 
     button {
       width: 100%;
-      height: 40px;
+      height: 54px;
       margin-top: 30px;
       padding: 0 10px;
       position: relative;
@@ -78,6 +98,15 @@
     max-height: 290px;
 
     form {
+
+      button {
+        background: #962FBF;
+        box-shadow: 0 0 0 #D62976;
+
+        &:hover {
+          box-shadow: 0 0 15px #D62976;
+        }
+      }
 
       .check {
         margin-top: 18px;
@@ -91,27 +120,37 @@
           box-sizing: content-box;
         }
 
+        label {
+          font-size: 1rem;
+
+          span {
+            font-weight: normal;
+            font-size: 0.875rem;
+          }
+        }
+
         input {
-          width: 20px;
-          height: 20px;
+          width: 30px;
+          height: 26px;
           margin-top: 0;
           background: #efefef;
           display: inline-block;
           border: 1px solid #ccc;
-          border-radius: 10px;
+          border-radius: 13px;
           appearance: none;
+          cursor: pointer;
 
           &:before {
-            $width: 14px;
-            $radius: (14/2)px;
+            $width: 20;
+            $radius: ($width/2);
             content: '';
             margin-top: 2px;
             margin-left: -6px;
-            width: $width;
-            height: $width;
+            width: $width + px;
+            height: $width + px;
             background: #fff;
             border: 1px solid #999;
-            border-radius: 7px;
+            border-radius: $radius + px;
             display: block;
             transition: margin-left 0.25s ease-in-out;
             cursor: pointer;
@@ -121,7 +160,7 @@
             background: rgb(152, 255, 152);
 
             &:before {
-              margin-left: 10px;
+              margin-left: 14px;
             }
           }
         }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { isFlowPredicate } from '@babel/types';
+
+import { registration } from '../../store/actions'
 
 const Register2 = props => {
 
@@ -25,18 +26,16 @@ const Register2 = props => {
   const handleSubmit =  e => {
       e.preventDefault();
       let id = localStorage.getItem('id');
-      //geograpics-staging.herokuapp.com/users/:id
-      axios.put(`//geograpics-staging.herokuapp.com/users/${id}`, { private: isPrivate, email })
-          .then(res => res ? alert('yay') : alert('nay'));
+      registration(id, { private: isPrivate, email }, props.history);
   };
 
   const toggleCheck = e => {
     setIsPrivate(!isPrivate);
   }
 
-  console.log('stuff', props.match);
-
   return(
+    <>
+    <div class="overlay"></div>
     <div className="modal page2">
       <h1>Finish Registering</h1>
       <form onSubmit={handleSubmit}>
@@ -49,12 +48,13 @@ const Register2 = props => {
         <table class="group check">
           <tbody>
             <td><input type="checkbox" class={isPrivate ? 'on' : 'off'} onClick={toggleCheck} /></td>
-            <td><label>Set Account to Private<br />(<em>Only you can view your photos</em>)</label></td>
+            <td><label>Set Account to Private<br /><span>(<em>Only you can view your photos</em>)</span></label></td>
           </tbody>
         </table>
-        <button type="submit">Log In</button>
+        <button type="submit">Finish Registration</button>
       </form>
     </div>
+    </>
   );
 };
 

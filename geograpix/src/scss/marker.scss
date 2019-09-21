@@ -1,0 +1,12 @@
+.marker {
+  position: relative;
+
+  .thumbnail {
+    width: 128px;
+    height: 161px;
+    @include border-radius(20);
+    position: absolute;
+    left: -126px;
+    bottom: 14px;
+  }
+}
