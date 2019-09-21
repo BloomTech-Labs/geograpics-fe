@@ -14,7 +14,7 @@ const Preloader = props => {
         localStorage.setItem('id', vars.userid);
         localStorage.setItem('inDb', vars.inDatabase)
         if(vars.inDatabase === 'true') {
-            props.history.push('/')
+            props.history.push(`/dashboard/${vars.username}`)
         } else {
             props.history.push('/register/2')
         }

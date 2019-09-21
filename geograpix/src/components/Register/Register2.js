@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from "react-redux";
 import axios from 'axios';
 
 import { registration } from '../../store/actions'
@@ -7,7 +8,6 @@ const Register2 = props => {
 
   const [isPrivate, setIsPrivate] = useState(false);
   const [email, setEmail] = useState();
-  console.log('test')
 
   // useEffect( () => {
   //     let vars = {};
@@ -26,8 +26,10 @@ const Register2 = props => {
 
   const handleSubmit =  e => {
       e.preventDefault();
+      console.log('click Button')
       let id = localStorage.getItem('id');
-      registration(id, { private: isPrivate, email }, props.history);
+      let username = localStorage.getItem('username')
+      props.registration(id, { private: isPrivate, email }, props.history, username);
   };
 
   const toggleCheck = e => {
@@ -36,7 +38,7 @@ const Register2 = props => {
 
   return(
     <>
-    <div class="overlay"></div>
+    <div className="overlay"></div>
     <div className="modal page2">
       <h1>Finish Registering</h1>
       <form onSubmit={handleSubmit}>
@@ -46,9 +48,9 @@ const Register2 = props => {
               eMail
           </label>
         </div>
-        <table class="group check">
+        <table className="group check">
           <tbody>
-            <td><input type="checkbox" class={isPrivate ? 'on' : 'off'} onClick={toggleCheck} /></td>
+            <td><input type="checkbox" className={isPrivate ? 'on' : 'off'} onClick={toggleCheck} /></td>
             <td><label>Set Account to Private<br /><span>(<em>Only you can view your photos</em>)</span></label></td>
           </tbody>
         </table>
@@ -59,4 +61,15 @@ const Register2 = props => {
   );
 };
 
-export default Register2;
+const mapStateToProps = (state) => {
+	console.log(state.register.user)
+  
+	return {
+		isRegistering: state.register.isRegistering,
+    error: state.register.error,
+    user: state.register.user
+	}
+}
+
+
+export default connect(mapStateToProps, {registration})(Register2);
