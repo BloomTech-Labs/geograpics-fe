@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PlotIcon from './PlotIcon';
 import {getPictureObject} from '../store/actions';
 
-const Map = (props) => {
+export const Map = (props) => {
 
     const [viewport, setViewport] = useState({
         latitude: 37.77872018361018,
