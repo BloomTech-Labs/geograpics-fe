@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
 import axios from 'axios';
 
+import RegisterMap from '../RegisterMap';
 import { registration } from '../../store/actions'
 
 const Register2 = props => {
@@ -57,6 +58,11 @@ const Register2 = props => {
         <button type="submit">Finish Registration</button>
       </form>
     </div>
+    <section className="map">
+        <header className="App-header">
+          <RegisterMap />
+        </header>
+      </section>
     </>
   );
 };

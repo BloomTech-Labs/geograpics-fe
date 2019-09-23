@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+
+import RegisterMap from '../RegisterMap';
+
 let host = process.env.REACT_APP_URL || 'http://localhost:8000';
 
 const Register = () => {
@@ -21,6 +25,11 @@ const Register = () => {
       </p>
       <button onClick={registerMe}>Register with Instagram</button>
     </div>
+    <section className="map">
+        <header className="App-header">
+          <RegisterMap />
+        </header>
+    </section>
     </>
   );
 };
