@@ -35,8 +35,8 @@ const Map = (props) => {
           {props.pictureInfo.map((marker, index) => (
             <PlotIcon
               key={index}
-              latitude={marker.latitude}
-              longitude={marker.longitude}
+              latitude={parseFloat(marker.latitude)}
+              longitude={parseFloat(marker.longitude)}
               caption={marker.caption}
             />
           ))}
