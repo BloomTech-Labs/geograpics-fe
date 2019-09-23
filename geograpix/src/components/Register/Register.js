@@ -10,7 +10,7 @@ const Register = () => {
   console.log(host)
 
   const registerMe = () => {
-    window.open(`${host}/auth/instagram`, "_self");
+    window.open(`${host}auth/instagram`, "_self");
     // window.open(`${process.env.REACT_APP_URL}/auth/instagram`, "_self");
   };
 
