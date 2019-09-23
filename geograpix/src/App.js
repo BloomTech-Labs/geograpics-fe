@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Map from './components/Map';
+import RegisterMap from './components/RegisterMap';
 
 import Register from './components/Register/Register';
 import Register2 from './components/Register/Register2';
@@ -15,11 +15,6 @@ function App() {
       <Route exact path="/preloader/" component={Preloader} />
       <Route exact path="/dashboard/:id" component={Dashboard} />
       <Route path="/register/2/" component={Register2} />
-      <section className="map">
-        <header className="App-header">
-          <Map />
-        </header>
-      </section>
     </div>
   );
 };
