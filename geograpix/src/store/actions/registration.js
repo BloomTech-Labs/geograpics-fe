@@ -6,7 +6,7 @@ export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
 
 // const hostURL = `//geograpics-staging.herokuapp.com`;
-const hostURL = process.env.REACT_APP_URL
+const hostURL = process.env.REACT_APP_URL || 'http://localhost:8000'
 
 export const registration = (id, values, history, username) => dispatch => {
   console.log('got to action')

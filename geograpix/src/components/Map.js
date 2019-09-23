@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMapGL from 'react-map-gl';
 import { connect } from 'react-redux';
 
 import PlotIcon from './PlotIcon';
+import {getPictureObject} from '../store/actions';
 
 const Map = (props) => {
 
     const [viewport, setViewport] = useState({
-        latitude: 33.9243117,
-        longitude: -118.1327898,
+        latitude: 37.77872018361018,
+        longitude: -122.3962783813477,
         zoom: 10,
         width: '90vw',
         height: '90vh',
     })
     
 
-    // useEffect(() => {
-    //     props.pictureInfo
-    // },[])
+    useEffect(() => {
+        props.getPictureObject();
+    },[])
 
     if(!props.pictureInfo) return <p>Loading...</p> 
     return (
@@ -52,4 +53,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {})(Map);
+export default connect(mapStateToProps, {getPictureObject})(Map);
