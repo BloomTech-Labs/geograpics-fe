@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Register = () => {
+  console.log(process.env.REACT_APP_URL)
 
   const registerMe = () => {
-    window.open("https://geograpics-staging.herokuapp.com/auth/instagram", "_self");
+    // window.open("https://geograpics-staging.herokuapp.com/auth/instagram", "_self");
+    window.open(`${process.env.REACT_APP_URL}/auth/instagram`, "_self");
   };
 
   return(
