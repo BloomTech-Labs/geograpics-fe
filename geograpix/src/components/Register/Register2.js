@@ -5,7 +5,7 @@ import axios from 'axios';
 import RegisterMap from '../RegisterMap';
 import { registration } from '../../store/actions'
 
-const Register2 = props => {
+export const Register2 = props => {
 
   const [isPrivate, setIsPrivate] = useState(false);
   const [email, setEmail] = useState();
@@ -21,7 +21,6 @@ const Register2 = props => {
   // }, []);
 
   const onChangeHandler = e => {
-    e.preventDefault();
     setEmail(e.target.value);
   };
 

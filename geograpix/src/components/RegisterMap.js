@@ -3,7 +3,7 @@ import ReactMapGL from 'react-map-gl';
 
 import PlotIcon from './PlotIcon';
 
-const RegisterMap = () => {
+export const RegisterMap = () => {
 
     const [viewport, setViewport] = useState({
         latitude: 37.77872018361018,

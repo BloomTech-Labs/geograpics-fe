@@ -6,7 +6,7 @@ import RegisterMap from '../RegisterMap';
 
 let host = process.env.REACT_APP_URL || 'http://localhost:8000';
 
-const Register = () => {
+export const Register = () => {
   console.log(host)
 
   const registerMe = () => {
@@ -23,7 +23,7 @@ const Register = () => {
         Donec efficitur porta vulputate. Vivamus porta consectetur lorem, iaculis cursus eros placerat sed.
         Etiam cursus porttitor consequat.
       </p>
-      <button onClick={registerMe}>Register with Instagram</button>
+      <button className="register-btn" onClick={registerMe}>Register with Instagram</button>
     </div>
     <section className="map">
         <header className="App-header">
