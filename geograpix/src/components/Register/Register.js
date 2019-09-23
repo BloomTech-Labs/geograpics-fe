@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+let host = process.env.REACT_APP_URL || 'http://localhost:8000';
 
 const Register = () => {
-  console.log(process.env.REACT_APP_URL)
+  console.log(host)
 
   const registerMe = () => {
-    // window.open("https://geograpics-staging.herokuapp.com/auth/instagram", "_self");
-    window.open(`${process.env.REACT_APP_URL}/auth/instagram`, "_self");
+    window.open(`${host}/auth/instagram`, "_self");
+    // window.open(`${process.env.REACT_APP_URL}/auth/instagram`, "_self");
   };
 
   return(
