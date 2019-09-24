@@ -11,8 +11,8 @@ export const Map = (props) => {
         latitude: 37.77872018361018,
         longitude: -122.3962783813477,
         zoom: 10,
-        width: '90vw',
-        height: '90vh',
+        width: '100vw',
+        height: '100vh',
     })
     
 

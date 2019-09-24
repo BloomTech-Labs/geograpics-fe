@@ -4,6 +4,7 @@
   .thumbnail {
     width: 128px;
     height: 161px;
+    background: white;
     @include border-radius(20);
     position: absolute;
     left: -126px;
