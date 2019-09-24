@@ -86,7 +86,7 @@
   form {
 
     .group {
-      margin-top: 30px;
+      margin-top: 40px;
       position: relative;
     }
 
@@ -107,7 +107,7 @@
       padding: 0 10px;
       position: relative;
       z-index: 10;
-      border: 1px solid #D8D8D8;
+      border: 2px solid #D8D8D8;
       @include border-radius(5);
     }
 
@@ -119,28 +119,35 @@
     button {
       width: 100%;
       height: 54px;
-      margin-top: 30px;
+      margin-top: 40px;
       padding: 0 10px;
+      font: bold 1.063rem/1.125em $font-default-stack;
       position: relative;
       z-index: 10;
+      @include border-radius(27);
     }
   }
 
   &.page2 {
 
     form {
+      padding: 0 30px;
 
       button {
+        margin: 30px 0 0;
         background: #962FBF;
-        box-shadow: 0 0 0 #D62976;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.25s linear;
 
         &:hover {
-          box-shadow: 0 0 15px #D62976;
+          opacity: 1;
         }
       }
 
       .check {
-        margin-top: 18px;
+        margin-top: 30px;
         text-align: left;
         
         td {
@@ -167,7 +174,7 @@
           background: #efefef;
           display: inline-block;
           border: 1px solid #ccc;
-          border-radius: 13px;
+          @include border-radius(13);
           appearance: none;
           cursor: pointer;
 

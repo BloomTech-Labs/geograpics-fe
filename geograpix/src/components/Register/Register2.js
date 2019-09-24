@@ -40,7 +40,9 @@ export const Register2 = props => {
     <>
     <div className="overlay">
       <div className="modal page2">
-        <h1>Finish Registering</h1>
+        <div class="head">
+          <h1 className="ir">Geograpics</h1>
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="group">
             <input type="email" name="email" id="email" placeholder="eMail" onChange={onChangeHandler} value={email} />
