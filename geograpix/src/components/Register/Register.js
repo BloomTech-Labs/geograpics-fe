@@ -21,13 +21,13 @@ export const Register = () => {
     <>
     <div className="overlay">
       <div className="modal">
-        <div class="head">
+        <div className="head">
           <h1 className="ir">Geograpics</h1>
         </div>
         <h2>
           The place to organize your travel memories
         </h2>
-        <a className="btn-login" onclick={login}>Sign in with Instagram</a>
+        <a className="btn-login" onClick={login}>Sign in with Instagram</a>
         <p>
           Don't have an account?
         </p>

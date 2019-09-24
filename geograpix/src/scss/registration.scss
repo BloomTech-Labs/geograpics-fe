@@ -1,5 +1,7 @@
 .overlay {
+  min-width: 100vw;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   background: rgba(0,0,0,0.7);
   position: absolute;
@@ -14,7 +16,7 @@
 .modal {
   width: 100%;
   max-width: 21.25rem;
-  margin: auto;
+  margin: 40px auto;
   padding-bottom: 2.5rem;
   background-color: #fff;
   text-align: center;
@@ -24,6 +26,7 @@
   .head {
     padding: 3.063rem 3.313rem 1.625rem;
     background: transparent url('../assets/reg-header-bg.png');
+    @include border-radius-corners(10px, 10px, 0, 0);
 
     h1 {
       width: 14.625rem;
@@ -211,5 +214,11 @@
       }
 
     }
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .overlay {
+    min-height: 500px;
   }
 }

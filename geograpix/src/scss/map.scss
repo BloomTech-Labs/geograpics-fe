@@ -1,7 +1,13 @@
 .App-header {
 
   & > div {
-    width: 100vw !important;
-    height: 100vh !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+  }
+
+  @media only screen and (min-width: 400px) {
+    & > div {
+      height: 500px !important;
+    }
   }
 }
