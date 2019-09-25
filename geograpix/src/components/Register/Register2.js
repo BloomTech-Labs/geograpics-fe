@@ -38,24 +38,27 @@ export const Register2 = props => {
 
   return(
     <>
-    <div className="overlay"></div>
-    <div className="modal page2">
-      <h1>Finish Registering</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="group">
-          <input type="email" name="email" id="email" placeholder="eMail" onChange={onChangeHandler} value={email} />
-          <label htmlFor="username">
-              eMail
-          </label>
+    <div className="overlay">
+      <div className="modal page2">
+        <div class="head">
+          <h1 className="ir">Geograpics</h1>
         </div>
-        <table className="group check">
-          <tbody>
-            <td><input type="checkbox" className={isPrivate ? 'on' : 'off'} onClick={toggleCheck} /></td>
-            <td><label>Set Account to Private<br /><span>(<em>Only you can view your photos</em>)</span></label></td>
-          </tbody>
-        </table>
-        <button type="submit">Finish Registration</button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <div className="group">
+            <input type="email" name="email" id="email" placeholder="eMail" onChange={onChangeHandler} value={email} />
+            <label htmlFor="username">
+                eMail
+            </label>
+          </div>
+          <table className="group check">
+            <tbody>
+              <td><input type="checkbox" className={isPrivate ? 'on' : 'off'} onClick={toggleCheck} /></td>
+              <td><label>Set Account to Private<br /><span>(<em>Only you can view your photos</em>)</span></label></td>
+            </tbody>
+          </table>
+          <button type="submit">Finish Registration</button>
+        </form>
+      </div>
     </div>
     <section className="map">
         <header className="App-header">

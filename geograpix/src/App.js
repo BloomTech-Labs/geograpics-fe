@@ -9,6 +9,10 @@ import Dashboard from './components/Dashboard'
 
 function App() {
 
+  console.log('SCREEN', window.screen);
+  // window.screen.orientation.lock();
+  // window.screen.lockOrientation("portrait");
+
   return (
     <div className="App">
       <Route exact path="/" component={Register} />

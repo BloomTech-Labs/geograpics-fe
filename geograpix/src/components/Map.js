@@ -11,8 +11,8 @@ export const Map = (props) => {
         latitude: 37.09872018361018,
         longitude: -122.3962783813477,
         zoom: 10,
-        width: '80vw',
-        height: '80vh',
+        width: '100vw',
+        height: '100vh',
     })
     
     const [selectedPark, setSelectedPark] = useState(null);
