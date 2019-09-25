@@ -10,23 +10,12 @@ export const Register2 = props => {
   const [isPrivate, setIsPrivate] = useState(false);
   const [email, setEmail] = useState();
 
-  // useEffect( () => {
-  //     let vars = {};
-  //     window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-  //         vars[key] = value;
-  //     });
-  //     localStorage.setItem('token', vars.token);
-  //     localStorage.setItem('username', vars.username);
-  //     localStorage.setItem('id', vars.userid);
-  // }, []);
-
   const onChangeHandler = e => {
     setEmail(e.target.value);
   };
 
   const handleSubmit =  e => {
       e.preventDefault();
-      console.log('click Button')
       let id = localStorage.getItem('id');
       let username = localStorage.getItem('username')
       props.registration(id, { private: isPrivate, email }, props.history, username);

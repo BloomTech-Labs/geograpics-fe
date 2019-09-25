@@ -37,7 +37,9 @@ export const Map = (props) => {
       setSelectedPark(null)
     }
 
-    if(!props.pictureInfo) return <p>Loading...</p> 
+    if(!props.pictureInfo) {
+      return <p>Loading...</p>
+    }
     return (
         <div className="App">
         <header className="App-header">
@@ -49,7 +51,8 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
-          {props.pictureInfo.map((marker, index) => (
+          {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
+            
             <PlotIcon
               key={index}
               latitude={parseFloat(marker.latitude)}
