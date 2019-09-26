@@ -54,7 +54,7 @@ export const Map = (props) => {
 
     console.log(props.pictureInfo.pictures)
 
-    if(!props.pictureInfo.pictures) return <p>Loading...</p> 
+    if(!props.pictureInfo) return <p>Loading...</p> 
     return (
         <div className="App">
         <header className="App-header">
@@ -132,7 +132,7 @@ export const Map = (props) => {
               </div>
             </div>
           ): null}
-          {props.pictureInfo.pictures.map((marker, index) => (
+          {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
             <PlotIcon
               key={index}
               latitude={parseFloat(marker.latitude)}
@@ -144,7 +144,6 @@ export const Map = (props) => {
               }}
             />
           ))}
-
           {selectedPark ? (
             <Popup 
               latitude={parseFloat(selectedPark.latitude)} 
