@@ -1,13 +1,54 @@
 .App-header {
 
   & > div {
-    min-width: 100vw !important;
+    // min-width: 100vw !important;
     min-height: 100vh !important;
+    width: 100% !important;
   }
 
   @media only screen and (min-width: 400px) {
     & > div {
       height: 500px !important;
     }
+  }
+}
+
+.btn-signout {
+  padding: .5rem 1rem;
+  letter-spacing: 0.0125rem;
+  font: bold 1.063rem/1.125em $font-default-stack;
+  border: none;
+  border-radius: 1.625rem;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: opacity 0.25s linear, background-color 0.25s linear, filter 0.25s linear;
+  background-color: transparent;
+  border: 0.125em solid #962FBF;
+
+  &:hover {
+    background-color: #962FBF;
+    color: #fff;
+  }
+}
+
+.btn-instagramaccount {
+  font-size: .7rem;
+  padding: .5rem 1rem;
+  letter-spacing: 0.0125rem;
+  border: none;
+  border-radius: 1.625rem;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: opacity 0.25s linear, background-color 0.25s linear, filter 0.25s linear;
+  background-image: linear-gradient(90deg, #4F5BD5 4.79%, #962FBF 26.9%, #D62976 76.54%, #FA7E1E 95.21%);
+  color: #fff;
+  filter: saturate(100%);
+
+  &:hover {
+    filter: saturate(150%);
   }
 }
