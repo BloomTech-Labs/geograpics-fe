@@ -139,7 +139,6 @@
   }
   &.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
     position: relative;
-    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5));
 
     &::before {
       content: '';
@@ -155,7 +154,6 @@
   }
   &.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
     position: relative;
-    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5));
 
     &::before {
       content: '';
