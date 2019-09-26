@@ -4,18 +4,23 @@ import { connect } from 'react-redux';
 
 import PlotIcon from './PlotIcon';
 import {getPictureObject} from '../store/actions';
+import Logo from '../assets/logo-geograpics.svg'
+import Search from '../assets/Path.png'
 
 export const Map = (props) => {
 
+    const username = localStorage.getItem('username') 
+
     const [viewport, setViewport] = useState({
-        latitude: 37.09872018361018,
-        longitude: -122.3962783813477,
-        zoom: 10,
+        latitude: 20,
+        longitude: 0,
+        zoom: 2,
         width: '100vw',
         height: '100vh',
     })
     
     const [selectedPark, setSelectedPark] = useState(null);
+    const [ShowProfile, setShowProfile] = useState(false);
 
     useEffect(() => {
         props.getPictureObject();
@@ -37,13 +42,24 @@ export const Map = (props) => {
       setSelectedPark(null)
     }
 
-    if(!props.pictureInfo) {
-      return <p>Loading...</p>
+    const toggleProfile = (e) => {
+      e.preventDefault();
+      setShowProfile(!ShowProfile)
     }
+
+    const logout = () => {
+        localStorage.clear();
+		    props.history.push('/') 
+    }
+
+    console.log(props.pictureInfo.pictures)
+
+    if(!props.pictureInfo) return <p>Loading...</p> 
     return (
         <div className="App">
         <header className="App-header">
-        <ReactMapGL 
+        <ReactMapGL
+            style={{position: "relative"}}
             {...viewport} 
             mapboxApiAccessToken="pk.eyJ1IjoibGFtYmRhbGFibWFwIiwiYSI6ImNrMGN4cGhpaDAwbXkzaHF2OWV2ODVqeXUifQ.TMRmQN2yzxAX43K5g7Y2TA"
             mapStyle= "mapbox://styles/lambdalabmap/ck0ogodu804y91cqrfpsac1pz"
@@ -51,8 +67,72 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
+          <div style={{zIndex: "50", width: "100%", position: "absolute"}}>
+            <div style={{position: "relative", display: "flex", alignItems: "flex-start", justifyContent: "space-between"}}>
+              <img style={{width: "auto", height: "44px", margin: "25px"}} src={Logo} alt="Geograpics Logo" />
+              <div style={{display:"flex", alignItems: "center"}}>  
+                <input style={{marginRight: "-10px", boxShadow:  "1px 3px 2px 0px rgba(0,0,0,0.3)", paddingLeft: "10px", border: "none", height: "20px", borderRadius: "20px"}} placeholder="Search" type="text" />
+                <button style={{margin: "0px", border: "none", backgroundColor: "transparent"}} onClick={toggleProfile}>
+                  <img 
+                    style= {{
+                      cursor: "pointer", 
+                      width: "47px", 
+                      margin: "33px 33px 25px 25px", 
+                      borderRadius: "50%"
+                    }} 
+                    src= {props.pictureInfo.profile_pic} 
+                    alt= {props.pictureInfo.username} 
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          {ShowProfile ? (  
+            <div style={{zIndex: "50", width: "100%", position: "absolute", top: "88px", display: "flex", justifyContent: "flex-end"}}>
+              <div style={{border: "1px solid slategrey", borderRadius: "10px", width: "320px", backgroundColor: "white", marginRight: "40px", boxShadow:  "2px 3px 2px 2px rgba(0,0,0,0.3)"}}>
+                <div style={{borderBottom: "1px solid slategrey", display: "flex", alignItems: "center", justifyContent: "space-around", paddingRight: "2%"}}>
+                  <div style={{width: "40%"}}>
+                    <img 
+                      style= {{
+                        cursor: "pointer", 
+                        width: "100px", 
+                        height: "100px",
+                        margin: "33px 33px 25px 25px", 
+                        borderRadius: "50%"
+                      }} 
+                      src= {props.pictureInfo.profile_pic} 
+                      alt= {props.pictureInfo.username} 
+                    />
+                  </div>
+                  <div style={{width: "40%", display: "flex", flexDirection: "column"}}>
+                    <h5 style={{fontSize: "1rem",margin: "0px"}}>{props.pictureInfo.full_name}</h5>
+                    <p style={{margin: "3px 0%", fontSize: ".7rem"}}>{props.pictureInfo.email}</p>
+                    <p style={{margin: "3px 0%", fontWeight: "bold", fontSize: ".7rem"}}>Edit Profile</p>
+                    <p style={{margin: "3px 0%", fontWeight: "bold", fontSize: ".7rem"}}>Privacy Settings</p>
+                  </div>
+                </div>
+                <div style={{borderBottom: "1px solid slategrey", padding: "20px 0%", display: "flex", justifyContent: "space-evenly"}}>
+                  <div>
+                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>{props.pictureInfo.pictures.length}</p>
+                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>Posts</p>
+                  </div>
+                  <div>
+                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>50</p>
+                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>Followers</p>
+                  </div>
+                  <div>
+                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>{props.pictureInfo.pictures.length}</p>
+                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>Posts</p>
+                  </div>
+                </div>
+                <div style={{padding: "20px 0%", display: "flex", justifyContent: "space-around"}}>
+                    <button style={{fontSize: ".7rem"}} className="btn-instagramaccount">Instagram Account</button>
+                    <button style={{fontSize: ".7rem"}} onClick={logout} className="btn-signout">Sign Out</button>
+                </div>
+              </div>
+            </div>
+          ): null}
           {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
-            
             <PlotIcon
               key={index}
               latitude={parseFloat(marker.latitude)}
@@ -64,7 +144,6 @@ export const Map = (props) => {
               }}
             />
           ))}
-
           {selectedPark ? (
             <Popup 
               latitude={parseFloat(selectedPark.latitude)} 
