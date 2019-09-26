@@ -67,67 +67,48 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
-          <div style={{zIndex: "50", width: "100%", position: "absolute"}}>
-            <div style={{position: "relative", display: "flex", alignItems: "flex-start", justifyContent: "space-between"}}>
-              <img style={{width: "auto", height: "44px", margin: "25px"}} src={Logo} alt="Geograpics Logo" />
-              <div style={{display:"flex", alignItems: "center"}}>  
-                <input style={{marginRight: "-10px", boxShadow:  "1px 3px 2px 0px rgba(0,0,0,0.3)", paddingLeft: "10px", border: "none", height: "20px", borderRadius: "20px"}} placeholder="Search" type="text" />
-                <button style={{margin: "0px", border: "none", backgroundColor: "transparent"}} onClick={toggleProfile}>
-                  <img 
-                    style= {{
-                      cursor: "pointer", 
-                      width: "47px", 
-                      margin: "33px 33px 25px 25px", 
-                      borderRadius: "50%"
-                    }} 
-                    src= {props.pictureInfo.profile_pic} 
-                    alt= {props.pictureInfo.username} 
-                  />
+          <div className="top-toolbar">
+            <div className="top-toolbar-static">
+              <img className="top-toolbar-logo" src={Logo} alt="Geograpics Logo" />
+              <div className="top-toolbar-profile-thumbnail">  
+                <input className="top-toolbar-searchbox" placeholder="Search" type="text" />
+                <button className="top-toolbar-profile-button" onClick={toggleProfile}>
+                  <img className="top-toolbar-thumbnail-photo" src= {props.pictureInfo.profile_pic} alt={props.pictureInfo.username}/>
                 </button>
               </div>
             </div>
           </div>
           {ShowProfile ? (  
-            <div style={{zIndex: "50", width: "100%", position: "absolute", top: "88px", display: "flex", justifyContent: "flex-end"}}>
-              <div style={{border: "1px solid slategrey", borderRadius: "10px", width: "320px", backgroundColor: "white", marginRight: "40px", boxShadow:  "2px 3px 2px 2px rgba(0,0,0,0.3)"}}>
-                <div style={{borderBottom: "1px solid slategrey", display: "flex", alignItems: "center", justifyContent: "space-around", paddingRight: "2%"}}>
-                  <div style={{width: "40%"}}>
-                    <img 
-                      style= {{
-                        cursor: "pointer", 
-                        width: "100px", 
-                        height: "100px",
-                        margin: "33px 33px 25px 25px", 
-                        borderRadius: "50%"
-                      }} 
-                      src= {props.pictureInfo.profile_pic} 
-                      alt= {props.pictureInfo.username} 
-                    />
+            <div className="profile-tab-bar">
+              <div className="profile-tab-box">
+                <div className="profile-tab-top-div">
+                  <div className="profile-tab-img-div">
+                    <img className="profile-tab-prof-pic" src= {props.pictureInfo.profile_pic} alt= {props.pictureInfo.username}/>
                   </div>
-                  <div style={{width: "40%", display: "flex", flexDirection: "column"}}>
-                    <h5 style={{fontSize: "1rem",margin: "0px"}}>{props.pictureInfo.full_name}</h5>
-                    <p style={{margin: "3px 0%", fontSize: ".7rem"}}>{props.pictureInfo.email}</p>
-                    <p style={{margin: "3px 0%", fontWeight: "bold", fontSize: ".7rem"}}>Edit Profile</p>
-                    <p style={{margin: "3px 0%", fontWeight: "bold", fontSize: ".7rem"}}>Privacy Settings</p>
+                  <div className="top-div-details-div">
+                    <h5 className="top-div-details-name">{props.pictureInfo.full_name}</h5>
+                    <p className="top-div-details">{props.pictureInfo.email}</p>
+                    <p className="top-div-details-bold">Edit Profile</p>
+                    <p className="top-div-details-bold">Privacy Settings</p>
                   </div>
                 </div>
-                <div style={{borderBottom: "1px solid slategrey", padding: "20px 0%", display: "flex", justifyContent: "space-evenly"}}>
+                <div className="profile-tab-middle-div">
                   <div>
-                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>{props.pictureInfo.pictures.length}</p>
-                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>Posts</p>
+                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
+                    <p className="middle-div-details">Posts</p>
                   </div>
                   <div>
-                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>50</p>
-                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>Followers</p>
+                    <p className="middle-div-details">50</p>
+                    <p className="middle-div-details">Followers</p>
                   </div>
                   <div>
-                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>{props.pictureInfo.pictures.length}</p>
-                    <p style={{fontSize: ".95rem", fontWeight: "bold", margin: "0px"}}>Posts</p>
+                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
+                    <p className="middle-div-details">Posts</p>
                   </div>
                 </div>
-                <div style={{padding: "20px 0%", display: "flex", justifyContent: "space-around"}}>
-                    <button style={{fontSize: ".7rem"}} className="btn-instagramaccount">Instagram Account</button>
-                    <button style={{fontSize: ".7rem"}} onClick={logout} className="btn-signout">Sign Out</button>
+                <div className="profile-tab-bottom-div">
+                    <button className="btn-instagramaccount">Instagram Account</button>
+                    <button className="btn-signout" onClick={logout}>Sign Out</button>
                 </div>
               </div>
             </div>
@@ -151,12 +132,12 @@ export const Map = (props) => {
               onClose={closePopup}
             >
               <div>
-                <img className="img-marker" src={selectedPark.thumbnail} alt={selectedPark.caption} />
-                <div style={{display: 'flex', alignItems: 'baseline', margin: '5px 0% 0px 0%', paddingLeft: "10px"}}>
-                  <h5 style={{ margin: "15px 0px 5px 0px", fontSize: ".8rem"}}>Lanatheartist</h5>
-                  <p style={{ margin: "0px", paddingLeft: '10px', fontWeight: "lighter", fontSize: ".8rem"}}>{selectedPark.caption}</p>
+                <img className="img-popup" src={selectedPark.thumbnail} alt={selectedPark.caption} />
+                <div className="div-text-popup">
+                  <h5 className="title-text-div">Lanatheartist</h5>
+                  <p className="caption-text-div">{selectedPark.caption}</p>
                 </div>
-                <p style={{ fontSize: ".8rem", paddingLeft: "10px", margin: "0px 0px 20px 0px", color: "slategrey"}}>Aug 4, 2019</p>
+                <p className="date-text-div">Aug 4, 2019</p>
               </div>
             </Popup>
           ) : null}
