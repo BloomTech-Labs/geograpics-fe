@@ -12,9 +12,9 @@ export const Map = (props) => {
     const username = localStorage.getItem('username') 
 
     const [viewport, setViewport] = useState({
-        latitude: 33.0730569,
-        longitude: -96.774234,
-        zoom: 10,
+        latitude: 20,
+        longitude: 0,
+        zoom: 2,
         width: '100vw',
         height: '100vh',
     })
