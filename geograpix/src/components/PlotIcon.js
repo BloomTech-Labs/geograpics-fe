@@ -5,7 +5,7 @@ import Icon from '../assets/marker.svg';
 
 
 const PlotIcon = (props) => {
-  if(!props.latitude) return <p>Loading...</p>;
+  if(!props.latitude) return null;
 
   return (
     <div className="marker">

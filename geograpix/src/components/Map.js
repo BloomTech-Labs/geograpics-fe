@@ -24,6 +24,7 @@ export const Map = (props) => {
 
     useEffect(() => {
         props.getPictureObject();
+        console.log("UseEffect re-render")
     },[])
 
     useEffect(() => {
@@ -52,9 +53,16 @@ export const Map = (props) => {
 		    props.history.push('/') 
     }
 
-    console.log(props.pictureInfo.pictures)
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+    
+    const dateFunction = (dateProp) => {
+      const date = new Date(dateProp*1000)
+      console.log(date)
+      console.log(dateProp, "Date Prop")
+      return date.toLocaleString("en-US", options)
+    } 
 
-    if(!props.pictureInfo) return <p>Loading...</p> 
+    if(!props.pictureInfo) return null 
     return (
         <div className="App">
         <header className="App-header">
@@ -132,12 +140,12 @@ export const Map = (props) => {
               onClose={closePopup}
             >
               <div>
-                <img className="img-popup" src={selectedPark.thumbnail} alt={selectedPark.caption} />
+                <img className="img-popup" src={selectedPark.standard_resolution} alt={selectedPark.caption} />
                 <div className="div-text-popup">
-                  <h5 className="title-text-div">Lanatheartist</h5>
+                  <h5 className="title-text-div">{props.pictureInfo.username}</h5>
                   <p className="caption-text-div">{selectedPark.caption}</p>
                 </div>
-                <p className="date-text-div">Aug 4, 2019</p>
+                <p className="date-text-div">{dateFunction(parseInt(selectedPark.created_time))}</p>
               </div>
             </Popup>
           ) : null}
