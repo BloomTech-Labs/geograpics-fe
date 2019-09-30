@@ -1,8 +1,4 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-# Title of project goes here
+# Geograpics (formerly known as Geograpix/Travel Mapping)
 
 ### You can find the deployed project at [Geograpics.com](https://www.geograpics.com/).
 
@@ -123,7 +119,7 @@ Problem we sought to solve:
 
 We used Passport JS tokens, along with Instagram API for user authentication.  Passport JS supports both cookies and tokens, enabling customization.  The directions are relatively straight-forward, and the programmers already ensured its compatibility with Instagram's API.  Combined, it leaves security to far more qualified developers, allowing the Geograpics team to focus more on a seamless integration of user registration, login, and app use.
 
-##  Rendering API:
+##  Map + Marker Rendering API:
 
 ### MapBox API
 
@@ -132,23 +128,19 @@ We used Mapbox API to render the map and markers.  It's a competitor to Google M
 
 # Environment Variables
 
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
+In order for the app to function correctly, the user must set up their own environment variables on Heroku. There should be a .env file containing the following:
 
-    * CALLBACKURL - where Passport JS redirects to.  The initial endpoint is yoursite.com/auth/instagram, the Callback URL is yoursite.com/auth/instagram/callback
+    * PORT - the desired local port
+    * CALLBACKURL - where Passport JS redirects to.  The initial endpoint is yoursite.com/auth/instagram, the Callback URL is yoursite.com/auth/instagram/callback, or localhost: ###
     * DB_ENV - for the database config file
     * FRONTENDURL - yourHostingSite.com
-    *INSTACLIENT - a secret string for Instagram verification, obtained from Instagram
+    * INSTACLIENT - a secret string for Instagram verification, obtained from Instagram
     * INSTASECRET - a secret string for Instagram verification, obtained from Instagram
     * TOKENSECRET - any variable you choose, the secret for the token encryption that Passport JS uses
 
 # Content Licenses
 
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
-
-| Image Filename | Source / Creator | License                                                                      |
-| -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
+All photos used on Geograpics or in design files are royalty-free & attribution-free, requiring no licenses.  All headshots of developers are the property of their respective persons, no license, explicit or implied, is granted for use outside this readme file without the express permission of the owner/person im the headshot image.
 
 # Testing
 
