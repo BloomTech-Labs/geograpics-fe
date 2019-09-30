@@ -1,45 +1,157 @@
-import React, { useState } from 'react';
-import ReactMapGL from 'react-map-gl';
+import React, { useState, useEffect } from 'react';
+import ReactMapGL, {Popup} from 'react-map-gl';
 import { connect } from 'react-redux';
 
 import PlotIcon from './PlotIcon';
+import {getPictureObject} from '../store/actions';
+import Logo from '../assets/logo-geograpics.svg'
+import Search from '../assets/Path.png'
 
-const Map = (props) => {
+export const Map = (props) => {
+
+    const username = localStorage.getItem('username') 
 
     const [viewport, setViewport] = useState({
-        latitude: 33.9243117,
-        longitude: -118.1327898,
-        zoom: 10,
-        width: '90vw',
-        height: '90vh',
+        latitude: 20,
+        longitude: 0,
+        zoom: 2,
+        width: '100vw',
+        height: '100vh',
     })
     
+    const [selectedPark, setSelectedPark] = useState(null);
+    const [ShowProfile, setShowProfile] = useState(false);
 
-    // useEffect(() => {
-    //     props.pictureInfo
-    // },[])
+    useEffect(() => {
+        props.getPictureObject();
+        console.log("UseEffect re-render")
+    },[])
 
-    if(!props.pictureInfo) return <p>Loading...</p> 
+    useEffect(() => {
+      const listener = e => {
+        if(e.key === "Escape"){
+          setSelectedPark(null)
+        }
+      };
+      window.addEventListener("keydown", listener);
+      return () => {
+        window.removeEventListener("keydown", listener)
+      }
+    }, [])
+
+    const closePopup = () => {
+      setSelectedPark(null)
+    }
+
+    const toggleProfile = (e) => {
+      e.preventDefault();
+      setShowProfile(!ShowProfile)
+    }
+
+    const logout = () => {
+        localStorage.clear();
+		    props.history.push('/') 
+    }
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+    
+    const dateFunction = (dateProp) => {
+      const date = new Date(dateProp*1000)
+      console.log(date)
+      console.log(dateProp, "Date Prop")
+      return date.toLocaleString("en-US", options)
+    } 
+
+    if(!props.pictureInfo) return null 
     return (
         <div className="App">
         <header className="App-header">
-        <ReactMapGL 
+        <ReactMapGL
+            style={{position: "relative"}}
             {...viewport} 
             mapboxApiAccessToken="pk.eyJ1IjoibGFtYmRhbGFibWFwIiwiYSI6ImNrMGN4cGhpaDAwbXkzaHF2OWV2ODVqeXUifQ.TMRmQN2yzxAX43K5g7Y2TA"
-            mapStyle= "mapbox://styles/lambdalabmap/ck0cxri810ael1dpsew5mayn5"
+            mapStyle= "mapbox://styles/lambdalabmap/ck0ogodu804y91cqrfpsac1pz"
             onViewportChange={viewport => {
             setViewport(viewport);
           }}
         >
-          {props.pictureInfo.map((marker, index) => (
+          <div className="top-toolbar">
+            <div className="top-toolbar-static">
+              <img className="top-toolbar-logo" src={Logo} alt="Geograpics Logo" />
+              <div className="top-toolbar-profile-thumbnail">  
+                <input className="top-toolbar-searchbox" placeholder="Search" type="text" />
+                <button className="top-toolbar-profile-button" onClick={toggleProfile}>
+                  <img className="top-toolbar-thumbnail-photo" src= {props.pictureInfo.profile_pic} alt={props.pictureInfo.username}/>
+                </button>
+              </div>
+            </div>
+          </div>
+          {ShowProfile ? (  
+            <div className="profile-tab-bar">
+              <div className="profile-tab-box">
+                <div className="profile-tab-top-div">
+                  <div className="profile-tab-img-div">
+                    <img className="profile-tab-prof-pic" src= {props.pictureInfo.profile_pic} alt= {props.pictureInfo.username}/>
+                  </div>
+                  <div className="top-div-details-div">
+                    <h5 className="top-div-details-name">{props.pictureInfo.full_name}</h5>
+                    <p className="top-div-details">{props.pictureInfo.email}</p>
+                    <p className="top-div-details-bold">Edit Profile</p>
+                    <p className="top-div-details-bold">Privacy Settings</p>
+                  </div>
+                </div>
+                <div className="profile-tab-middle-div">
+                  <div>
+                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
+                    <p className="middle-div-details">Posts</p>
+                  </div>
+                  <div>
+                    <p className="middle-div-details">50</p>
+                    <p className="middle-div-details">Followers</p>
+                  </div>
+                  <div>
+                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
+                    <p className="middle-div-details">Posts</p>
+                  </div>
+                </div>
+                <div className="profile-tab-bottom-div">
+                    <button className="btn-instagramaccount">Instagram Account</button>
+                    <button className="btn-signout" onClick={logout}>Sign Out</button>
+                </div>
+              </div>
+            </div>
+          ): null}
+          {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
             <PlotIcon
               key={index}
-              latitude={marker.latitude}
-              longitude={marker.longitude}
+              latitude={parseFloat(marker.latitude)}
+              longitude={parseFloat(marker.longitude)}
               caption={marker.caption}
+              clickMarker={(e) => {
+                e.preventDefault();
+                setSelectedPark(marker)
+              }}
             />
           ))}
+          {selectedPark ? (
+            <Popup 
+              latitude={parseFloat(selectedPark.latitude)} 
+              longitude={parseFloat(selectedPark.longitude)}
+              onClose={closePopup}
+            >
+              <div>
+                <img className="img-popup" src={selectedPark.standard_resolution} alt={selectedPark.caption} />
+                <div className="div-text-popup">
+                  <h5 className="title-text-div">{props.pictureInfo.username}</h5>
+                  <p className="caption-text-div">{selectedPark.caption}</p>
+                </div>
+                <p className="date-text-div">{dateFunction(parseInt(selectedPark.created_time))}</p>
+              </div>
+            </Popup>
+          ) : null}
+
         </ReactMapGL>
+        {/* <h1 className="title">This is map</h1> */}
       </header>
     </div>
   );
@@ -51,4 +163,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {})(Map);
+export default connect(mapStateToProps, {getPictureObject})(Map);

@@ -2,7 +2,7 @@ import { REGISTER_START, REGISTER_SUCCESS, REGISTER_FAIL } from '../actions/inde
 
 const initialState = {
   error: null,
-  photos: [],
+  user: [],
   isRegistering: false
 }
 
@@ -17,7 +17,7 @@ export const register = (state = initialState, action) => {
     case REGISTER_SUCCESS:
       return {
         ...state,
-        photos: action.payload,
+        user: action.payload,
         isRegistering: false
       }
     case REGISTER_FAIL:

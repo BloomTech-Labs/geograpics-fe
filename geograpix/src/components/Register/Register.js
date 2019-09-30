@@ -1,23 +1,44 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Register = () => {
+
+import RegisterMap from '../RegisterMap';
+
+let host = process.env.REACT_APP_URL || 'http://localhost:8000';
+
+export const Register = () => {
+  console.log(host)
+
+  const login = () => {
+    window.open(`${host}/auth/instagram`, "_self");
+  };
 
   const registerMe = () => {
-    window.open("https://geograpics-staging.herokuapp.com/auth/instagram", "_self");
+    window.open(`${host}/auth/instagram`, "_self");
   };
 
   return(
     <>
-    <div class="overlay"></div>
-    <div className="modal">
-      <h1>Geograpics</h1>
-      <p>
-        Donec efficitur porta vulputate. Vivamus porta consectetur lorem, iaculis cursus eros placerat sed.
-        Etiam cursus porttitor consequat.
-      </p>
-      <button onClick={registerMe}>Register with Instagram</button>
+    <div className="overlay">
+      <div className="modal">
+        <div className="head">
+          <h1 className="ir">Geograpics</h1>
+        </div>
+        <h2>
+          The place to organize your travel memories
+        </h2>
+        <a className="btn-login" onClick={login}>Sign in with Instagram</a>
+        <p>
+          Don't have an account?
+        </p>
+        <a className="btn-register" onClick={registerMe}>Register with Instagram</a>
+      </div>
     </div>
+    <section className="map">
+        <header className="App-header">
+          <RegisterMap />
+        </header>
+    </section>
     </>
   );
 };
