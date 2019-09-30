@@ -8,7 +8,7 @@
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                      [<img src="ReadMe-headshot-pictures\Chandler-Lauren.JPG" width = "200" />](https://github.com/LaurenChandler)                       |                      [<img src="ReadMe-headshot-pictures\Garcia-Joseph.JPG" width = "200" />](https://github.com/kingmoc)                       |                      [<img src="ReadMe-headshot-pictures\Hamano-Dustin.JPG" width = "200" />](https://github.com/dhamano)                       |                      [<img src="ReadMe-headshot-pictures\Hatfield-Alyssa.JPG" width = "200" />](https://github.com/xCthaeh)                       |                                          |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/LaurenChandler)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kingmoc)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/dhamano)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/xCthaeh)           |     
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test1) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jgarcia85/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test3) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alyssahatfield)
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test1) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jgarcia85/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/dustin-hamano) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alyssahatfield)
 
 
 <br>
@@ -42,11 +42,11 @@ Problem we sought to solve:
 -    Give user the ability to set account to private within profile settings
 -    After login through Passport, pull data from Instagram and show:
 
-    - Map marker of where photo was taken
-    - Photo itself
-    - Instagram photo caption, number of likes, and hashtags
-    - User's Instagram username & avatar
-    - Date photo was uploaded to Instagram
+    * Map marker of where photo was taken
+    * Photo itself
+    * Instagram photo caption, number of likes, and hashtags
+    * User's Instagram username & avatar
+    * Date photo was uploaded to Instagram
 
 ### API Integrations
 
