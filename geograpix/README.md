@@ -42,57 +42,95 @@
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+1️⃣ [Trello Board](https://trello.com/b/necshfm2/travel-mapping-16)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+1️⃣ [Product Canvas](https://www.notion.so/Geograpics-76cb4742e4c34455b3a7b04491959669)
 
 1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+As an Instagram user, I don't have an easy way to display all the locations I have been in a visual & interactive way. I would like a system in which I can see my photos on a map, know how many photos I've taken in places, and be able to see/view my photos at location in a group or individually. I would also like to be able to quickly search by location.
 
 
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+-    Utilize Instagram API to login through Instagram
+-    Give user the ability to set account to private within profile settings
+-    After login through Passport, pull data from Instagram and show:
+
+    - Map marker of where photo was taken
+    - Photo itself
+    - Instagram photo caption, number of likes, and hashtags
+    - User's Instagram username & avatar
+    - Date photo was uploaded to Instagram
+
+### API Integrations
+
+- MapBox
+- Instagram API
+- Passport JS
+
+### Back-end
+
+- SQLite3 in development
+- PostgreSQL on Heroku platform deployment
+
+### Front-end
+
+- React / Hooks
+- Redux / Hooks
+
+### Styling Considerations
+
+- SCSS
+
 
 ## 1️⃣ Tech Stack
 
-### Front end built using:
 
-#### _Front end framework goes here_
+### Front end (https://github.com/Lambda-School-Labs/geograpics-fe) built using:
 
-🚫 Why did you choose this framework?
+- React / Hooks
+- Redux / Hooks
 
--    point one
--    point two
--    point three
--    point four
+#### Why did you choose this framework?
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+- Familiarity with the technology
+- Scalability potential with Redux/thunk
 
-#### Front end deployed to `🚫insert service here`
+### Styling Considerations
 
-#### [Back end](🚫link to back end repo here) built using:
+- SCSS
 
-#### 🚫 back end framework goes here
+#### Why did you choose this framework?
 
--    point one
--    point two
--    point three
+- To make styling consistent across all developer repos
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+#### Front end deployed to Netlify
+
+### Back end (https://github.com/Lambda-School-Labs/geograpics-be) built using the following:
+
+- NodeJS
+- Express
+- Knex
+- SQLite3 + PostgreSQL
+
+#### Why did you choose this framework?
+
+- Familiarity with the technology
+- Most of it is industry standard or within the top choices when designing a new system
+
+### How do you plan on interacting with your APIs?
+
+- REST API
+
+#### Back end deployed to Heroku using PostgreSQL plugin
+
 
 # APIs
 
-## 2️⃣ Authentication API here
+## 2️⃣ Authentication API:
+
+### PassportJS
 
 🚫Replace text below with a description of the API
 
