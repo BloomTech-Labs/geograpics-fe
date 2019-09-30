@@ -2,15 +2,11 @@
 
 🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
+# Title of project goes here
 
-# 1️⃣ Title of project goes here
+### You can find the deployed project at [Geograpics.com](https://www.geograpics.com/).
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
-
-## 4️⃣ Contributors
-
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
+## Contributors
 
 |                                       [Lauren Chandler: <br>UX Design](https://github.com/LaurenChandler)                                        |                                       [Joseph Garcia:<br> Web Development](https://github.com/kingmoc)                                        |                                       [Dustin Hamano: <br>Web Development](https://github.com/dhamano)                                        |                                       [Alyssa Hatfield:<br> Team Lead](https://github.com/xCthaeh)                                        |                                       
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
@@ -18,7 +14,7 @@
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/LaurenChandler)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kingmoc)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/dhamano)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/xCthaeh)           |     
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test1) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jgarcia85/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test3) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alyssahatfield)
 
-<br>
+
 <br>
 
 [Sepideh Khoshgoftar: <br>UX Design](https://github.com/SepidehKhoshgoftar)                                        |                                       [Benjamin Peck:<br>Web Development](https://github.com/bwpeck)                                        |                                       [Anthony Piazza: <br> Web Development](https://github.com/anthonypiazza)                                        |                                       [Greg Zolton II: <br>Web Development](https://github.com/Zolton/)                                        |                                       
@@ -30,28 +26,21 @@
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
-
 ## Project Overview
 
-1️⃣ [Trello Board](https://trello.com/b/necshfm2/travel-mapping-16)
+[Trello Board](https://trello.com/b/necshfm2/travel-mapping-16)
 
-1️⃣ [Product Canvas](https://www.notion.so/Geograpics-76cb4742e4c34455b3a7b04491959669)
+[Product Canvas](https://www.notion.so/Geograpics-76cb4742e4c34455b3a7b04491959669)
 
-1️⃣ [UX Design files](Figma: https://www.figma.com/file/sWDtjc2kzzL0zfIbehv18C/Labs16_Geograpics?node-id=30%3A2) (Image files: https://drive.google.com/drive/folders/1o_1g7uGSO-NHqko287cB8tpcb26g0Zxi) - 🚫 delete if not applicable
+[UX Design files: Figma](https://www.figma.com/file/sWDtjc2kzzL0zfIbehv18C/Labs16_Geograpics?node-id=30%3A2)
 
-As an Instagram user, I don't have an easy way to display all the locations I have been in a visual & interactive way. I would like a system in which I can see my photos on a map, know how many photos I've taken in places, and be able to see/view my photos at location in a group or individually. I would also like to be able to quickly search by location.
+[UX Design Files: Images](https://drive.google.com/drive/folders/1o_1g7uGSO-NHqko287cB8tpcb26g0Zxi)
+
+Problem we sought to solve:
+- As an Instagram user, I don't have an easy way to display all the locations I have been in a visual & interactive way. I would like a system in which I can see my photos on a map, know how many photos I've taken in places, and be able to see/view my photos at location in a group or individually. I would also like to be able to quickly search by location.
 
 
-### 4️⃣ Key Features
+### Key Features
 
 -    Utilize Instagram API to login through Instagram
 -    Give user the ability to set account to private within profile settings
@@ -84,7 +73,7 @@ As an Instagram user, I don't have an easy way to display all the locations I ha
 - SCSS
 
 
-## 1️⃣ Tech Stack
+## Tech Stack
 
 
 ### Front end (https://github.com/Lambda-School-Labs/geograpics-fe) built using:
@@ -126,7 +115,7 @@ As an Instagram user, I don't have an easy way to display all the locations I ha
 #### Back end deployed to Heroku using PostgreSQL plugin
 
 
-# 2️⃣ APIs
+# APIs
 
 ##  Authentication API:
 
@@ -141,7 +130,7 @@ We used Passport JS tokens, along with Instagram API for user authentication.  P
 We used Mapbox API to render the map and markers.  It's a competitor to Google Maps, though with much cheaper developer usage plans, fewer API calls, a more seamless integration into our tech stack, and a generally smoother implementation than what Google Maps allows for.
 
 
-# 3️⃣ Environment Variables
+# Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
@@ -152,7 +141,7 @@ In order for the app to function correctly, the user must set up their own envir
     * INSTASECRET - a secret string for Instagram verification, obtained from Instagram
     * TOKENSECRET - any variable you choose, the secret for the token encryption that Passport JS uses
 
-# 5️⃣ Content Licenses
+# Content Licenses
 
 🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
@@ -161,11 +150,11 @@ In order for the app to function correctly, the user must set up their own envir
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
 
-# 4️⃣ Testing
+# Testing
 
 🚫Document what you used for testing and why
 
-# 4️⃣ Installation Instructions
+# Installation Instructions
 
 - Dependencies are listed in package.json and can be installed locally using:
     - "yarn install" can be used to install the required dependencies from the package.json on front end
@@ -174,12 +163,9 @@ In order for the app to function correctly, the user must set up their own envir
 
 ## Other Scripts
 
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+    * server - used to start local server using nodemon, "nodemon index.js"
+    * test - used to start local jest tests, incompatible with Passport, "cross-env jest --watch"
+    * start - used to start Heroku deployment, "node index.js"
 
 # Contributing
 
