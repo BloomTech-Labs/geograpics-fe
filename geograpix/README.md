@@ -46,7 +46,7 @@
 
 1️⃣ [Product Canvas](https://www.notion.so/Geograpics-76cb4742e4c34455b3a7b04491959669)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+1️⃣ [UX Design files](Figma: https://www.figma.com/file/sWDtjc2kzzL0zfIbehv18C/Labs16_Geograpics?node-id=30%3A2) (Image files: https://drive.google.com/drive/folders/1o_1g7uGSO-NHqko287cB8tpcb26g0Zxi) - 🚫 delete if not applicable
 
 As an Instagram user, I don't have an easy way to display all the locations I have been in a visual & interactive way. I would like a system in which I can see my photos on a map, know how many photos I've taken in places, and be able to see/view my photos at location in a group or individually. I would also like to be able to quickly search by location.
 
@@ -126,56 +126,31 @@ As an Instagram user, I don't have an easy way to display all the locations I ha
 #### Back end deployed to Heroku using PostgreSQL plugin
 
 
-# APIs
+# 2️⃣ APIs
 
-## 2️⃣ Authentication API:
+##  Authentication API:
 
-### PassportJS
+### PassportJS + Instagram API
 
-🚫Replace text below with a description of the API
+We used Passport JS tokens, along with Instagram API for user authentication.  Passport JS supports both cookies and tokens, enabling customization.  The directions are relatively straight-forward, and the programmers already ensured its compatibility with Instagram's API.  Combined, it leaves security to far more qualified developers, allowing the Geograpics team to focus more on a seamless integration of user registration, login, and app use.
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+##  Rendering API:
 
-## 2️⃣ Payment API here
+### MapBox API
 
-🚫Replace text below with a description of the API
+We used Mapbox API to render the map and markers.  It's a competitor to Google Maps, though with much cheaper developer usage plans, fewer API calls, a more seamless integration into our tech stack, and a generally smoother implementation than what Google Maps allows for.
 
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
 
 # 3️⃣ Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-🚫These are just examples, replace them with the specifics for your app
-
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
+    * CALLBACKURL - where Passport JS redirects to.  The initial endpoint is yoursite.com/auth/instagram, the Callback URL is yoursite.com/auth/instagram/callback
+    * DB_ENV - for the database config file
+    * FRONTENDURL - yourHostingSite.com
+    *INSTACLIENT - a secret string for Instagram verification, obtained from Instagram
+    * INSTASECRET - a secret string for Instagram verification, obtained from Instagram
+    * TOKENSECRET - any variable you choose, the secret for the token encryption that Passport JS uses
 
 # 5️⃣ Content Licenses
 
@@ -192,7 +167,10 @@ In order for the app to function correctly, the user must set up their own envir
 
 # 4️⃣ Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+- Dependencies are listed in package.json and can be installed locally using:
+    - "yarn install" can be used to install the required dependencies from the package.json on front end
+    - "npm install" can be used to install the required dependencies from the package.json on back end; recommend installing nodemon as well for local dev dependencies
+
 
 ## Other Scripts
 
@@ -241,4 +219,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project...
+See [Backend Documentation](https://github.com/Lambda-School-Labs/geograpics-be/blob/master/README.md) for details on the backend of our project...
