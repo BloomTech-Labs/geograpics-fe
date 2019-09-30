@@ -144,7 +144,15 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
 # Testing
 
-🚫Document what you used for testing and why
+### What We Chose
+
+- Jest, Enzyme, and Cypress
+
+### Why We Chose
+
+- Jest is a widely adopted testing framework used for testing React applications. It acts as a test runner, assertion library, mocking library, and comes bundled with Create-React-App for ease of use. It serves as an excellent test-runner which Enzyme utilizes to assert, manipulate, and traverse a React Components’ output. Enzyme is a JavaScript Testing utility for React that makes it easier to render a component (or multiple components), find elements, and interact with elements during testing. Its primary purpose when used in addition to Jest is to provide additional functionality.
+
+
 
 # Installation Instructions
 
@@ -155,9 +163,9 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
 ## Other Scripts
 
-    * server - used to start local server using nodemon, "nodemon index.js"
-    * test - used to start local jest tests, incompatible with Passport, "cross-env jest --watch"
-    * start - used to start Heroku deployment, "node index.js"
+    * npm run server - used to start local server using nodemon, "nodemon index.js"
+    * npm run start - used to start Heroku deployment, "node index.js"
+    * yarn run test - used to start testing
 
 # Contributing
 
