@@ -1,24 +1,16 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
+# Geograpics (formerly known as Geograpix/Travel Mapping)
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
+### You can find the deployed project at [Geograpics.com](https://www.geograpics.com/).
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
-# 1️⃣ Title of project goes here
-
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
-
-## 4️⃣ Contributors
-
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
+## Contributors
 
 |                                       [Lauren Chandler: <br>UX Design](https://github.com/LaurenChandler)                                        |                                       [Joseph Garcia:<br> Web Development](https://github.com/kingmoc)                                        |                                       [Dustin Hamano: <br>Web Development](https://github.com/dhamano)                                        |                                       [Alyssa Hatfield:<br> Team Lead](https://github.com/xCthaeh)                                        |                                       
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                      [<img src="ReadMe-headshot-pictures\Chandler-Lauren.JPG" width = "200" />](https://github.com/LaurenChandler)                       |                      [<img src="ReadMe-headshot-pictures\Garcia-Joseph.JPG" width = "200" />](https://github.com/kingmoc)                       |                      [<img src="ReadMe-headshot-pictures\Hamano-Dustin.JPG" width = "200" />](https://github.com/dhamano)                       |                      [<img src="ReadMe-headshot-pictures\Hatfield-Alyssa.JPG" width = "200" />](https://github.com/xCthaeh)                       |                                          |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/LaurenChandler)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kingmoc)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/dhamano)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/xCthaeh)           |     
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test1) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jgarcia85/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test3) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alyssahatfield)
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/test1) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jgarcia85/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/dustin-hamano) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alyssahatfield)
 
-<br>
+
 <br>
 
 [Sepideh Khoshgoftar: <br>UX Design](https://github.com/SepidehKhoshgoftar)                                        |                                       [Benjamin Peck:<br>Web Development](https://github.com/bwpeck)                                        |                                       [Anthony Piazza: <br> Web Development](https://github.com/anthonypiazza)                                        |                                       [Greg Zolton II: <br>Web Development](https://github.com/Zolton/)                                        |                                       
@@ -30,140 +22,150 @@
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
-
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+[Trello Board](https://trello.com/b/necshfm2/travel-mapping-16)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Product Canvas](https://www.notion.so/Geograpics-76cb4742e4c34455b3a7b04491959669)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+[UX Design files: Figma](https://www.figma.com/file/sWDtjc2kzzL0zfIbehv18C/Labs16_Geograpics?node-id=30%3A2)
 
-🚫 Replace lorem ipsum with a description of your project
+[UX Design Files: Images](https://drive.google.com/drive/folders/1o_1g7uGSO-NHqko287cB8tpcb26g0Zxi)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Problem we sought to solve:
+- As an Instagram user, I don't have an easy way to display all the locations I have been in a visual & interactive way. I would like a system in which I can see my photos on a map, know how many photos I've taken in places, and be able to see/view my photos at location in a group or individually. I would also like to be able to quickly search by location.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Key Features
+
+-    Utilize Instagram API to login through Instagram
+-    Give user the ability to set account to private within profile settings
+-    After login through Passport, pull data from Instagram and show:
+
+    * Map marker of where photo was taken
+    * Photo itself
+    * Instagram photo caption, number of likes, and hashtags
+    * User's Instagram username & avatar
+    * Date photo was uploaded to Instagram
+
+### API Integrations
+
+- MapBox
+- Instagram API
+- Passport JS
+
+### Back-end
+
+- SQLite3 in development
+- PostgreSQL on Heroku platform deployment
+
+### Front-end
+
+- React / Hooks
+- Redux / Hooks
+
+### Styling Considerations
+
+- SCSS
 
 
-### 4️⃣ Key Features
+## Tech Stack
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
 
-## 1️⃣ Tech Stack
+### Front end (https://github.com/Lambda-School-Labs/geograpics-fe) built using:
 
-### Front end built using:
+- React / Hooks
+- Redux / Hooks
 
-#### _Front end framework goes here_
+#### Why did you choose this framework?
 
-🚫 Why did you choose this framework?
+- Familiarity with the technology
+- Scalability potential with Redux/thunk
 
--    point one
--    point two
--    point three
--    point four
+### Styling Considerations
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+- SCSS
 
-#### Front end deployed to `🚫insert service here`
+#### Why did you choose this framework?
 
-#### [Back end](🚫link to back end repo here) built using:
+- To make styling consistent across all developer repos
 
-#### 🚫 back end framework goes here
+#### Front end deployed to Netlify
 
--    point one
--    point two
--    point three
+### Back end (https://github.com/Lambda-School-Labs/geograpics-be) built using the following:
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+- NodeJS
+- Express
+- Knex
+- SQLite3 + PostgreSQL
+
+#### Why did you choose this framework?
+
+- Familiarity with the technology
+- Most of it is industry standard or within the top choices when designing a new system
+
+### How do you plan on interacting with your APIs?
+
+- REST API
+
+#### Back end deployed to Heroku using PostgreSQL plugin
+
 
 # APIs
 
-## 2️⃣ Authentication API here
+##  Authentication API:
 
-🚫Replace text below with a description of the API
+### PassportJS + Instagram API
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+We used Passport JS tokens, along with Instagram API for user authentication.  Passport JS supports both cookies and tokens, enabling customization.  The directions are relatively straight-forward, and the programmers already ensured its compatibility with Instagram's API.  Combined, it leaves security to far more qualified developers, allowing the Geograpics team to focus more on a seamless integration of user registration, login, and app use.
 
-## 2️⃣ Payment API here
+##  Map + Marker Rendering API:
 
-🚫Replace text below with a description of the API
+### MapBox API
 
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
+We used Mapbox API to render the map and markers.  It's a competitor to Google Maps, though with much cheaper developer usage plans, fewer API calls, a more seamless integration into our tech stack, and a generally smoother implementation than what Google Maps allows for.
 
-## 3️⃣ Misc API here
 
-🚫Replace text below with a description of the API
+# Environment Variables
 
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
+In order for the app to function correctly, the user must set up their own environment variables on Heroku. There should be a .env file containing the following:
 
-## 3️⃣ Misc API here
+    * PORT - the desired local port
+    * CALLBACKURL - where Passport JS redirects to.  The initial endpoint is yoursite.com/auth/instagram, the Callback URL is yoursite.com/auth/instagram/callback, or localhost: ###
+    * DB_ENV - for the database config file
+    * FRONTENDURL - yourHostingSite.com
+    * INSTACLIENT - a secret string for Instagram verification, obtained from Instagram
+    * INSTASECRET - a secret string for Instagram verification, obtained from Instagram
+    * TOKENSECRET - any variable you choose, the secret for the token encryption that Passport JS uses
 
-🚫Replace text below with a description of the API
+# Content Licenses
 
-When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
+All photos used on Geograpics or in design files are royalty-free & attribution-free, requiring no licenses.  All headshots of developers are the property of their respective persons, no license, explicit or implied, is granted for use outside this readme file without the express permission of the owner/person im the headshot image.
 
-## 3️⃣ Misc API here
+# Testing
 
-🚫Replace text below with a description of the API
+### What We Chose
 
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
+- Jest, Enzyme, and Cypress
 
-# 3️⃣ Environment Variables
+### Why We Chose
 
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
+- Jest is a widely adopted testing framework used for testing React applications. It acts as a test runner, assertion library, mocking library, and comes bundled with Create-React-App for ease of use. It serves as an excellent test-runner which Enzyme utilizes to assert, manipulate, and traverse a React Components’ output. Enzyme is a JavaScript Testing utility for React that makes it easier to render a component (or multiple components), find elements, and interact with elements during testing. Its primary purpose when used in addition to Jest is to provide additional functionality.
 
-🚫These are just examples, replace them with the specifics for your app
 
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
 
-# 5️⃣ Content Licenses
+# Installation Instructions
 
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
+- Dependencies are listed in package.json and can be installed locally using:
+    - "yarn install" can be used to install the required dependencies from the package.json on front end
+    - "npm install" can be used to install the required dependencies from the package.json on back end; recommend installing nodemon as well for local dev dependencies
 
-| Image Filename | Source / Creator | License                                                                      |
-| -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
-
-# 4️⃣ Testing
-
-🚫Document what you used for testing and why
-
-# 4️⃣ Installation Instructions
-
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
 
 ## Other Scripts
 
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+    * npm run server - used to start local server using nodemon, "nodemon index.js"
+    * npm run start - used to start Heroku deployment, "node index.js"
+    * yarn run test - used to start testing
 
 # Contributing
 
@@ -203,4 +205,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project...
+See [Backend Documentation](https://github.com/Lambda-School-Labs/geograpics-be/blob/master/README.md) for details on the backend of our project...
