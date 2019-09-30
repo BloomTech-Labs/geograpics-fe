@@ -140,7 +140,7 @@ In order for the app to function correctly, the user must set up their own envir
 
 # Content Licenses
 
-All photos used on Geograpics or in design files are royalty-free & attribution-free, requiring no licenses.  All headshots of developers are the property of their respective persons, no license, explicit or implied, is granted for use outside this readme file without the express permission of the owner/person im the headshot image.
+All photos used on Geograpics or in design files are royalty-free & attribution-free, requiring no licenses.  All headshots of developers are the property of their respective persons, no license, explicit or implied, is granted for use outside this readme file without the express permission of the owner/person in the headshot image.
 
 # Testing
 
