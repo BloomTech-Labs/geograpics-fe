@@ -154,7 +154,7 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
 ### What We Chose for back end
 
-- Jest, Enzyme, and Cypress
+- Cypress
 
 ### Why We Chose
 
