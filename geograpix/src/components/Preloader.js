@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
-import { isFlowPredicate } from '@babel/types';
 
 const Preloader = props => {
 

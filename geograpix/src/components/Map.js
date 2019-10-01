@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import ReactMapGL, {Popup} from 'react-map-gl';
+import ReactMapGL from 'react-map-gl';
 import { connect } from 'react-redux';
+import Loader from "react-loader-spinner";
 
 import PlotIcon from './PlotIcon';
-import {getPictureObject} from '../store/actions';
+import {getPictureObject, refreshPictureObject} from '../store/actions';
 import Logo from '../assets/logo-geograpics.svg'
-import Search from '../assets/Path.png'
+// import Search from '../assets/Path.png'
+import PopupModal from './marker/popup';
+import Profile from './Profile/Profile';
 
 export const Map = (props) => {
-
-    const username = localStorage.getItem('username') 
 
     const [viewport, setViewport] = useState({
         latitude: 20,
@@ -22,9 +23,8 @@ export const Map = (props) => {
     const [selectedPark, setSelectedPark] = useState(null);
     const [ShowProfile, setShowProfile] = useState(false);
 
-    useEffect(() => {
+    useEffect( () => {
         props.getPictureObject();
-        console.log("UseEffect re-render")
     },[])
 
     useEffect(() => {
@@ -53,18 +53,20 @@ export const Map = (props) => {
 		    props.history.push('/') 
     }
 
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-    
-    const dateFunction = (dateProp) => {
-      const date = new Date(dateProp*1000)
-      console.log(date)
-      console.log(dateProp, "Date Prop")
-      return date.toLocaleString("en-US", options)
-    } 
+    const refreshPics = () => {
+      props.refreshPictureObject();
+    };
 
     if(!props.pictureInfo) return null 
     return (
         <div className="App">
+        <button onClick={refreshPics} className="refresh-pics">
+          {props.isGetting ?
+            <Loader type="Bars" color="#somecolor" height={20} width={20} />
+            :
+            "reFresh Pictures"
+          }
+        </button>
         <header className="App-header">
         <ReactMapGL
             style={{position: "relative"}}
@@ -78,49 +80,17 @@ export const Map = (props) => {
           <div className="top-toolbar">
             <div className="top-toolbar-static">
               <img className="top-toolbar-logo" src={Logo} alt="Geograpics Logo" />
-              <div className="top-toolbar-profile-thumbnail">  
-                <input className="top-toolbar-searchbox" placeholder="Search" type="text" />
+              <div className="top-toolbar-profile-thumbnail">
+                {/* <input className="top-toolbar-searchbox" placeholder="Search" type="text" /> //*/}
                 <button className="top-toolbar-profile-button" onClick={toggleProfile}>
                   <img className="top-toolbar-thumbnail-photo" src= {props.pictureInfo.profile_pic} alt={props.pictureInfo.username}/>
                 </button>
+                {ShowProfile ? (  
+                  <Profile {...props} logout={logout} />
+                ): null}
               </div>
             </div>
           </div>
-          {ShowProfile ? (  
-            <div className="profile-tab-bar">
-              <div className="profile-tab-box">
-                <div className="profile-tab-top-div">
-                  <div className="profile-tab-img-div">
-                    <img className="profile-tab-prof-pic" src= {props.pictureInfo.profile_pic} alt= {props.pictureInfo.username}/>
-                  </div>
-                  <div className="top-div-details-div">
-                    <h5 className="top-div-details-name">{props.pictureInfo.full_name}</h5>
-                    <p className="top-div-details">{props.pictureInfo.email}</p>
-                    <p className="top-div-details-bold">Edit Profile</p>
-                    <p className="top-div-details-bold">Privacy Settings</p>
-                  </div>
-                </div>
-                <div className="profile-tab-middle-div">
-                  <div>
-                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
-                    <p className="middle-div-details">Posts</p>
-                  </div>
-                  <div>
-                    <p className="middle-div-details">50</p>
-                    <p className="middle-div-details">Followers</p>
-                  </div>
-                  <div>
-                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
-                    <p className="middle-div-details">Posts</p>
-                  </div>
-                </div>
-                <div className="profile-tab-bottom-div">
-                    <button className="btn-instagramaccount">Instagram Account</button>
-                    <button className="btn-signout" onClick={logout}>Sign Out</button>
-                </div>
-              </div>
-            </div>
-          ): null}
           {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
             <PlotIcon
               key={index}
@@ -134,20 +104,13 @@ export const Map = (props) => {
             />
           ))}
           {selectedPark ? (
-            <Popup 
-              latitude={parseFloat(selectedPark.latitude)} 
-              longitude={parseFloat(selectedPark.longitude)}
-              onClose={closePopup}
-            >
-              <div>
-                <img className="img-popup" src={selectedPark.standard_resolution} alt={selectedPark.caption} />
-                <div className="div-text-popup">
-                  <h5 className="title-text-div">{props.pictureInfo.username}</h5>
-                  <p className="caption-text-div">{selectedPark.caption}</p>
-                </div>
-                <p className="date-text-div">{dateFunction(parseInt(selectedPark.created_time))}</p>
-              </div>
-            </Popup>
+            <PopupModal
+            {...props}
+            selectedPark={selectedPark}
+            latitude={parseFloat(selectedPark.latitude)} 
+            longitude={parseFloat(selectedPark.longitude)}
+            onClose={closePopup}
+            />
           ) : null}
 
         </ReactMapGL>
@@ -159,8 +122,9 @@ export const Map = (props) => {
 
 const mapStateToProps = state => {
     return{
-        pictureInfo: state.maps.pictureInfo
+        pictureInfo: state.maps.pictureInfo,
+        isGetting: state.maps.isGetting
     }
 }
 
-export default connect(mapStateToProps, {getPictureObject})(Map);
+export default connect(mapStateToProps, {getPictureObject, refreshPictureObject})(Map);

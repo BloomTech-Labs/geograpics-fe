@@ -13,7 +13,7 @@ export const RegisterMap = () => {
         height: '90vh',
     })
 
-    const [mockPicture, setmockPicture] = useState(
+    const [mockPicture] = useState(
         [
             {
               id: 8,

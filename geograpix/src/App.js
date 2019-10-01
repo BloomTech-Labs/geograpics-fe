@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import RegisterMap from './components/RegisterMap';
 
 import Register from './components/Register/Register';
 import Register2 from './components/Register/Register2';
