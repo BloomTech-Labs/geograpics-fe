@@ -6,7 +6,7 @@
 
 |              [Lauren Chandler: <br>UX Design](https://github.com/LaurenChandler)                          |                                       [Joseph Garcia:<br> Web Development](https://github.com/kingmoc)                                |                                       [Dustin Hamano: <br>Web Development](https://github.com/dhamano)                                        |                                       [Alyssa Hatfield:<br> Team Lead](https://github.com/xCthaeh)                                        |                                       
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="ReadMe-headshot-pictures\Chandler-Lauren.JPG" width = "200" />](https://github.com/LaurenChandler)                       |                      [<img src="ReadMe-headshot-pictures\Garcia-Joseph.JPG" width = "200" />](https://github.com/kingmoc)                       |                      [<img src="ReadMe-headshot-pictures\Hamano-Dustin.JPG" width = "200" />](https://github.com/dhamano)                       |                      [<img src="ReadMe-headshot-pictures\Hatfield-Alyssa.JPG" width = "200" />](https://github.com/xCthaeh)|
+|                      [<img src="geograpix/ReadMe-headshot-pictures\Chandler-Lauren.JPG" width = "200" />](https://github.com/LaurenChandler)                       |                      [<img src="geograpix/ReadMe-headshot-pictures\Garcia-Joseph.JPG" width = "200" />](https://github.com/kingmoc)                       |                      [<img src="geograpix/ReadMe-headshot-pictures\Hamano-Dustin.JPG" width = "200" />](https://github.com/dhamano)                       |                      [<img src="geograpix/ReadMe-headshot-pictures\Hatfield-Alyssa.JPG" width = "200" />](https://github.com/xCthaeh)|
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/LaurenChandler)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kingmoc)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/dhamano)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/xCthaeh)                
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/lauren-b-chandler) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jgarcia85/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/dustin-hamano) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alyssahatfield)
 
@@ -15,7 +15,7 @@
 
 |              [Sepideh Khoshgoftar: <br>UX Design](https://github.com/SepidehKhoshgoftar)                         |                                       [Benjamin Peck:<br>Web Development](https://github.com/bwpeck)                                |                                       [Anthony Piazza: <br> Web Development](https://github.com/anthonypiazza)                                        |                                       [Greg Zolton II: <br>Web Development](https://github.com/Zolton/)                                        |                                       
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="ReadMe-headshot-pictures\Khoshgoftar-Sepideh.JPG" width = "200" />](https://github.com/SepidehKhoshgoftar)                       |                      [<img src="ReadMe-headshot-pictures\Peck-Benjamin.JPG" width = "200" />](https://github.com/bwpeck)                       |                      [<img src="ReadMe-headshot-pictures\Piazza-Anthony.JPG" width = "200" />](https://github.com/anthonypiazza)                       |                      [<img src="ReadMe-headshot-pictures\Zolton-Greg.JPG" width = "200" />](https://github.com/Zolton)|
+|                      [<img src="geograpix/ReadMe-headshot-pictures\Khoshgoftar-Sepideh.JPG" width = "200" />](https://github.com/SepidehKhoshgoftar)                       |                      [<img src="geograpix/ReadMe-headshot-pictures\Peck-Benjamin.JPG" width = "200" />](https://github.com/bwpeck)                       |                      [<img src="geograpix/ReadMe-headshot-pictures\Piazza-Anthony.JPG" width = "200" />](https://github.com/anthonypiazza)                       |                      [<img src="geograpix/ReadMe-headshot-pictures\Zolton-Greg.JPG" width = "200" />](https://github.com/Zolton)|
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/SepidehKhoshgoftar)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/bwpeck)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/anthonypiazza)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Zolton)                
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/sepi-khoshgoftar/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/BenjaminWadePeck/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/piazzaanthony/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/greg-zolton/)
 
@@ -144,7 +144,7 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
 # Testing
 
-### What We Chose
+### What We Chose for front end
 
 - Jest, Enzyme, and Cypress
 
@@ -152,7 +152,13 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
 - Jest is a widely adopted testing framework used for testing React applications. It acts as a test runner, assertion library, mocking library, and comes bundled with Create-React-App for ease of use. It serves as an excellent test-runner which Enzyme utilizes to assert, manipulate, and traverse a React Components’ output. Enzyme is a JavaScript Testing utility for React that makes it easier to render a component (or multiple components), find elements, and interact with elements during testing. Its primary purpose when used in addition to Jest is to provide additional functionality.
 
+### What We Chose for back end
 
+- Jest, Enzyme, and Cypress
+
+### Why We Chose
+
+Cypress is a next-gen front end testing tool, makes it simple to set up and write tests, run the tests, and debug. Enables you to write faster, more reliable, and easier tests. Cypress takes screen caps as your tests run, tells you exactly what is causing your bugs, and is nearly instantaneous. It's a browser based testing like Selenium except it doesn't require any dependencies and is much easier to set up
 
 # Installation Instructions
 
@@ -165,7 +171,7 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
     * npm run server - used to start local server using nodemon, "nodemon index.js"
     * npm run start - used to start Heroku deployment, "node index.js"
-    * yarn run test - used to start testing
+    * yarn run test - used to start front end testing
 
 # Contributing
 
