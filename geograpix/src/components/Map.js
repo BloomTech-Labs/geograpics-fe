@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { NavigationControl } from 'react-map-gl';
 import { connect } from 'react-redux';
 import Loader from "react-loader-spinner";
 
@@ -77,6 +77,7 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
+            <NavigationControl showCompass showZoom captureScroll captureDrag />
           <div className="top-toolbar">
             <div className="top-toolbar-static">
               <img className="top-toolbar-logo" src={Logo} alt="Geograpics Logo" />
