@@ -25,6 +25,13 @@
   }
 }
 
+.mapboxgl-ctrl.mapboxgl-ctrl-group {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  z-index: 9999;
+}
+
 .top-toolbar{
   z-index: 50; 
   width: 100%; 
