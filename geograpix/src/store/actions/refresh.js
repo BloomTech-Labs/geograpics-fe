@@ -7,11 +7,11 @@ export const GET_PICTURE_OBJECT_FAIL = "GET_PICTURE_OBJECT_FAIL";
 // const hostURL = `//geograpics-staging.herokuapp.com`;
 const hostURL = process.env.REACT_APP_URL || '//localhost:8000'
 
-export const getPictureObject = () => dispatch => {
-  console.log('GET_PICTURE_OBJECT_START')
+export const refreshPictureObject = () => dispatch => {
+  console.log('REFRESH PICTURE CLICKED')
   dispatch({ type: GET_PICTURE_OBJECT_START });
   axiosWithAuth()
-    .get(`${hostURL}/map/update`)
+    .delete(`${hostURL}/map/refresh`)
         .then(res => {
           dispatch({ type: GET_PICTURE_OBJECT_SUCCESS, payload: res.data });
           console.log('GET_PICTURE_OBJECT_SUCCESS', res.data)

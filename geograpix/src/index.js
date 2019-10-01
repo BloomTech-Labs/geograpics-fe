@@ -14,6 +14,7 @@ import App from './App';
 Sentry.init({dsn: "https://3b2ee787f89b4257bc12a2abe6c13737@sentry.io/1730029"});
 
 const store = createStore(reducer, applyMiddleware(logger, thunk))
+// const store = createStore(reducer, applyMiddleware(thunk))
 
 /**
  *  Setup router and redux store for the App
