@@ -144,7 +144,7 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
 # Testing
 
-### What We Chose for front end
+### What We Chose
 
 - Jest, Enzyme, and Cypress
 
@@ -152,13 +152,7 @@ All photos used on Geograpics or in design files are royalty-free & attribution-
 
 - Jest is a widely adopted testing framework used for testing React applications. It acts as a test runner, assertion library, mocking library, and comes bundled with Create-React-App for ease of use. It serves as an excellent test-runner which Enzyme utilizes to assert, manipulate, and traverse a React Components’ output. Enzyme is a JavaScript Testing utility for React that makes it easier to render a component (or multiple components), find elements, and interact with elements during testing. Its primary purpose when used in addition to Jest is to provide additional functionality.
 
-### What We Chose for back end
-
-- Cypress
-
-### Why We Chose
-
-Cypress is a next-gen front end testing tool, makes it simple to set up and write tests, run the tests, and debug. Enables you to write faster, more reliable, and easier tests. Cypress takes screen caps as your tests run, tells you exactly what is causing your bugs, and is nearly instantaneous. It's a browser based testing like Selenium except it doesn't require any dependencies and is much easier to set up
+- Cypress is a next-gen front end testing tool, makes it simple to set up and write tests, run the tests, and debug. Enables you to write faster, more reliable, and easier tests. Cypress takes screen caps as your tests run, tells you exactly what is causing your bugs, and is nearly instantaneous. It's a browser based testing like Selenium except it doesn't require any dependencies and is much easier to set up
 
 # Installation Instructions
 
