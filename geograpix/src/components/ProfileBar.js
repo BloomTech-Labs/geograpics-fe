@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import Logo from '../assets/logo-geograpics.svg'
 import Profile from './Profile/Profile';
 
 const ProfileBar = props => {
+  // console.log('profilebar', props);
 
   const [ShowProfile, setShowProfile] = useState(false);
 
@@ -26,14 +28,20 @@ const ProfileBar = props => {
           <button className="top-toolbar-profile-button" onClick={toggleProfile}>
             <img className="top-toolbar-thumbnail-photo" src= {props.pictureInfo.profile_pic} alt={props.pictureInfo.username}/>
           </button>
-          {ShowProfile ? (  
+          {ShowProfile ? (
             <Profile {...props} logout={logout} />
           ): null}
         </div>
       </div>
     </div>
   )
+};
 
+ProfileBar.propTypes = {
+  pictureInfo: PropTypes.shape({
+    profile_pic: PropTypes.string,
+    username: PropTypes.string
+  })
 }
 
 export default ProfileBar;

@@ -68,5 +68,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-
 export default connect(mapStateToProps, {registration})(Register2);

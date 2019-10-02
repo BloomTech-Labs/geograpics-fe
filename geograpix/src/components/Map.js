@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, { NavigationControl } from 'react-map-gl';
 import { connect } from 'react-redux';
 import Loader from "react-loader-spinner";
+import PropTypes from 'prop-types';
 
 import PlotIcon from './PlotIcon';
 import {getPictureObject, refreshPictureObject} from '../store/actions';
@@ -10,6 +11,7 @@ import PopupModal from './marker/popup';
 import ProfileBar from './ProfileBar';
 
 export const Map = (props) => {
+  // console.log('MAP PROPTYPES', props);
 
     const [viewport, setViewport] = useState({
         latitude: 20,
@@ -90,17 +92,27 @@ export const Map = (props) => {
           ) : null}
 
         </ReactMapGL>
-        {/* <h1 className="title">This is map</h1> */}
       </header>
     </div>
   );
 };
 
 const mapStateToProps = state => {
-    return{
-        pictureInfo: state.maps.pictureInfo,
-        isGetting: state.maps.isGetting
-    }
+  return{
+    pictureInfo: state.maps.pictureInfo,
+    isGetting: state.maps.isGetting
+  }
 }
+
+Map.propTypes = {
+  pictureInfo: PropTypes.shape({
+    pictures: PropTypes.arrayOf(
+      PropTypes.shape({
+        longitude: PropTypes.number,
+        latitude: PropTypes.number
+      })
+    )
+  })
+};
 
 export default connect(mapStateToProps, {getPictureObject, refreshPictureObject})(Map);
