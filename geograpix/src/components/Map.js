@@ -5,10 +5,9 @@ import Loader from "react-loader-spinner";
 
 import PlotIcon from './PlotIcon';
 import {getPictureObject, refreshPictureObject} from '../store/actions';
-import Logo from '../assets/logo-geograpics.svg'
 // import Search from '../assets/Path.png'
 import PopupModal from './marker/popup';
-import Profile from './Profile/Profile';
+import ProfileBar from './ProfileBar';
 
 export const Map = (props) => {
 
@@ -21,7 +20,6 @@ export const Map = (props) => {
     })
     
     const [selectedPark, setSelectedPark] = useState(null);
-    const [ShowProfile, setShowProfile] = useState(false);
 
     useEffect( () => {
         props.getPictureObject();
@@ -43,16 +41,6 @@ export const Map = (props) => {
       setSelectedPark(null)
     }
 
-    const toggleProfile = (e) => {
-      e.preventDefault();
-      setShowProfile(!ShowProfile)
-    }
-
-    const logout = () => {
-        localStorage.clear();
-		    props.history.push('/') 
-    }
-
     const refreshPics = () => {
       props.refreshPictureObject();
     };
@@ -69,29 +57,16 @@ export const Map = (props) => {
         </button>
         <header className="App-header">
         <ReactMapGL
-            style={{position: "relative"}}
-            {...viewport} 
-            mapboxApiAccessToken="pk.eyJ1IjoibGFtYmRhbGFibWFwIiwiYSI6ImNrMGN4cGhpaDAwbXkzaHF2OWV2ODVqeXUifQ.TMRmQN2yzxAX43K5g7Y2TA"
-            mapStyle= "mapbox://styles/lambdalabmap/ck0ogodu804y91cqrfpsac1pz"
-            onViewportChange={viewport => {
+          style={{position: "relative"}}
+          {...viewport} 
+          mapboxApiAccessToken="pk.eyJ1IjoibGFtYmRhbGFibWFwIiwiYSI6ImNrMGN4cGhpaDAwbXkzaHF2OWV2ODVqeXUifQ.TMRmQN2yzxAX43K5g7Y2TA"
+          mapStyle= "mapbox://styles/lambdalabmap/ck0ogodu804y91cqrfpsac1pz"
+          onViewportChange={viewport => {
             setViewport(viewport);
           }}
         >
-            <NavigationControl showCompass showZoom captureScroll captureDrag />
-          <div className="top-toolbar">
-            <div className="top-toolbar-static">
-              <img className="top-toolbar-logo" src={Logo} alt="Geograpics Logo" />
-              <div className="top-toolbar-profile-thumbnail">
-                {/* <input className="top-toolbar-searchbox" placeholder="Search" type="text" /> //*/}
-                <button className="top-toolbar-profile-button" onClick={toggleProfile}>
-                  <img className="top-toolbar-thumbnail-photo" src= {props.pictureInfo.profile_pic} alt={props.pictureInfo.username}/>
-                </button>
-                {ShowProfile ? (  
-                  <Profile {...props} logout={logout} />
-                ): null}
-              </div>
-            </div>
-          </div>
+          <NavigationControl showCompass showZoom captureScroll captureDrag />
+          <ProfileBar {...props} />
           {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
             <PlotIcon
               key={index}
