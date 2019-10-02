@@ -1,7 +1,9 @@
 import React from 'react';
 import { Popup } from 'react-map-gl';
+import PropTypes from 'prop-types';
 
 const PopupModal = (props) => {
+  console.log('POPUP PROPS', props);
 
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -31,5 +33,18 @@ const PopupModal = (props) => {
     </Popup>
   );
 };
+
+PopupModal.propTypes = {
+  latitude: PropTypes.number,
+  longitude: PropTypes.number,
+  selectedPark: PropTypes.shape({
+    standard_resolution: PropTypes.string,
+    caption: PropTypes.string,
+    created_time: PropTypes.string
+  }),
+  pictureInfo: PropTypes.shape({
+    username: PropTypes.string
+  })
+}
 
 export default PopupModal;

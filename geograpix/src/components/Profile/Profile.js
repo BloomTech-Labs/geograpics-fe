@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Profile = props => {
-  console.log('PROFILE PROPS',props);
+export const Profile = props => {
+  // console.log('PROFILE PROPS',props);
 
   return(
       <div className="profile-tab-box">
@@ -36,6 +37,16 @@ const Profile = props => {
         </div>
       </div>
   );
+};
+
+Profile.propTypes = {
+  pictureInfo: PropTypes.shape({
+    email: PropTypes.string,
+    full_name: PropTypes.string,
+    profile_pic: PropTypes.string,
+    username: PropTypes.string,
+    pictures: PropTypes.array
+  })
 };
 
 export default Profile;

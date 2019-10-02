@@ -4,7 +4,7 @@ import {
 
 
 const initialState = {
-  pictureInfo: [],
+  pictureInfo: {},
   isGetting: false,
   error: null
 }

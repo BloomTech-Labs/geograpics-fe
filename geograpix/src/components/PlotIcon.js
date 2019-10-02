@@ -1,10 +1,13 @@
 import React from "react";
 import { Marker } from "react-map-gl";
+import PropTypes from 'prop-types';
 
 import Icon from '../assets/marker.svg';
 
 
 const PlotIcon = (props) => {
+  // console.log('PLOTICON PROPS',props);
+
   if(!props.latitude) return null;
 
   return (
@@ -21,5 +24,10 @@ const PlotIcon = (props) => {
     </div>
   );
 };
+
+PlotIcon.propTypes = {
+  caption: PropTypes.string,
+  clickMarker: PropTypes.func
+}
 
 export default PlotIcon;

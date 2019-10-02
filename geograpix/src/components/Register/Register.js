@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import RegisterMap from '../RegisterMap';
 
 let host = process.env.REACT_APP_URL || 'http://localhost:8000';

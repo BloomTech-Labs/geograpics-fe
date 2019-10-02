@@ -1,8 +1,10 @@
 import { axiosWithAuth } from '../../utilities/axiosWithAuth';
 
-export const GET_PICTURE_OBJECT_START = "GET_PICTURE_OBJECT_START";
-export const GET_PICTURE_OBJECT_SUCCESS = "GET_PICTURE_OBJECT_SUCCESS";
-export const GET_PICTURE_OBJECT_FAIL = "GET_PICTURE_OBJECT_FAIL";
+import {
+  GET_PICTURE_OBJECT_START,
+  GET_PICTURE_OBJECT_SUCCESS,
+  GET_PICTURE_OBJECT_FAIL
+} from './markers';
 
 // const hostURL = `//geograpics-staging.herokuapp.com`;
 const hostURL = process.env.REACT_APP_URL || '//localhost:8000'
