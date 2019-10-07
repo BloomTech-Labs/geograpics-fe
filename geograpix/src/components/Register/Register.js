@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-
+import React from 'react';
 
 import RegisterMap from '../RegisterMap';
 
@@ -27,11 +25,11 @@ export const Register = () => {
         <h2>
           The place to organize your travel memories
         </h2>
-        <a className="btn-login" onClick={login}>Sign in with Instagram</a>
+        <button className="btn-login" onClick={login}>Sign in with Instagram</button>
         <p>
           Don't have an account?
         </p>
-        <a className="btn-register" onClick={registerMe}>Register with Instagram</a>
+        <button className="btn-register" onClick={registerMe}>Register with Instagram</button>
       </div>
     </div>
     <section className="map">

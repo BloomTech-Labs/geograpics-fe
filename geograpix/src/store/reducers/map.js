@@ -1,9 +1,12 @@
-import { GET_PICTURE_OBJECT_START, GET_PICTURE_OBJECT_SUCCESS, GET_PICTURE_OBJECT_FAIL } from '../actions/index';
+import {
+  GET_PICTURE_OBJECT_START, GET_PICTURE_OBJECT_SUCCESS, GET_PICTURE_OBJECT_FAIL
+} from '../actions/index';
 
 
 const initialState = {
-  pictureInfo: [],
-  isGetting: false
+  pictureInfo: {},
+  isGetting: false,
+  error: null
 }
 
 export const maps = (state = initialState, action) => {

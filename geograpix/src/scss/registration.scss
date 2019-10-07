@@ -20,7 +20,7 @@
   padding-bottom: 2.5rem;
   background-color: #fff;
   text-align: center;
-  @include border-radius(10);
+  @include border-radius(10px);
   display: inline-block;
 
   .head {
@@ -52,7 +52,7 @@
     margin: 2.5rem 0 0.75rem;
   }
 
-  a {
+  button {
     padding: 1rem 2.25rem;
     letter-spacing: 0.0125rem;
     font: bold 1.063rem/1.125em $font-default-stack;
@@ -177,7 +177,7 @@
           background: #efefef;
           display: inline-block;
           border: 0.063rem solid #ccc;
-          @include border-radius(13);
+          @include border-radius(13px);
           appearance: none;
           cursor: pointer;
 
