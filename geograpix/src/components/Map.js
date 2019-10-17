@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, {Popup} from 'react-map-gl';
 import { connect } from 'react-redux';
 
+import ProfileContainer from './ProfileContainer';
 import PlotIcon from './PlotIcon';
 import {getPictureObject} from '../store/actions';
-import Logo from '../assets/logo-geograpics.svg'
-import Search from '../assets/Path.png'
+
+import StopCalendar from './StopCalendar'
+import StartCalendar from './StartCalendar'
 
 export const Map = (props) => {
 
@@ -20,7 +22,8 @@ export const Map = (props) => {
     })
     
     const [selectedPark, setSelectedPark] = useState(null);
-    const [ShowProfile, setShowProfile] = useState(false);
+    const [showProfile, setShowProfile] = useState(false);
+    const [showDatePicker, setShowDatePicker] = useState(true);
 
     useEffect(() => {
         props.getPictureObject();
@@ -45,7 +48,17 @@ export const Map = (props) => {
 
     const toggleProfile = (e) => {
       e.preventDefault();
-      setShowProfile(!ShowProfile)
+      setShowProfile(!showProfile)
+    }
+
+    const toggleDatePicker = (e) => {
+      e.preventDefault();
+      setShowDatePicker(!showDatePicker)
+    }
+
+    const closeDatePicker = (e) =>{
+      e.preventDefault()
+      setShowDatePicker(false)
     }
 
     const logout = () => {
@@ -75,51 +88,24 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
-          <div className="top-toolbar">
-            <div className="top-toolbar-static">
-              <img className="top-toolbar-logo" src={Logo} alt="Geograpics Logo" />
-              <div className="top-toolbar-profile-thumbnail">  
-                <input className="top-toolbar-searchbox" placeholder="Search" type="text" />
-                <button className="top-toolbar-profile-button" onClick={toggleProfile}>
-                  <img className="top-toolbar-thumbnail-photo" src= {props.pictureInfo.profile_pic} alt={props.pictureInfo.username}/>
-                </button>
-              </div>
-            </div>
+          <ProfileContainer 
+            toggleProfile={toggleProfile}
+            pictureInfo={props.pictureInfo}
+            showProfile={showProfile}
+            logout={logout}
+          /> 
+          <div style={{  Zindex: '50', position: 'absolute', display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
+            <button 
+              onClick={toggleDatePicker} 
+              style={{color: 'white', cursor: 'pointer', border: 'none', marginTop: '120px', marginRight: '37px', Zindex: '50', backgroundColor: 'black', height: '50px', width: '50px', borderRadius: '50%'}}
+            >Date</button>
           </div>
-          {ShowProfile ? (  
-            <div className="profile-tab-bar">
-              <div className="profile-tab-box">
-                <div className="profile-tab-top-div">
-                  <div className="profile-tab-img-div">
-                    <img className="profile-tab-prof-pic" src= {props.pictureInfo.profile_pic} alt= {props.pictureInfo.username}/>
-                  </div>
-                  <div className="top-div-details-div">
-                    <h5 className="top-div-details-name">{props.pictureInfo.full_name}</h5>
-                    <p className="top-div-details">{props.pictureInfo.email}</p>
-                    <p className="top-div-details-bold">Edit Profile</p>
-                    <p className="top-div-details-bold">Privacy Settings</p>
-                  </div>
-                </div>
-                <div className="profile-tab-middle-div">
-                  <div>
-                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
-                    <p className="middle-div-details">Posts</p>
-                  </div>
-                  <div>
-                    <p className="middle-div-details">50</p>
-                    <p className="middle-div-details">Followers</p>
-                  </div>
-                  <div>
-                    <p className="middle-div-details">{props.pictureInfo.pictures.length}</p>
-                    <p className="middle-div-details">Posts</p>
-                  </div>
-                </div>
-                <div className="profile-tab-bottom-div">
-                    <button className="btn-instagramaccount">Instagram Account</button>
-                    <button className="btn-signout" onClick={logout}>Sign Out</button>
-                </div>
+          {showDatePicker ? (
+              <div style={{paddingTop:'140px', marginLeft: '85%', position: 'absolute', backgroundColor: 'rgba(255,255,255,0.85)', height: '100vh', width: '300px', zIndex: '1000'}}>
+                <button style={{border: 'none', backgroundColor: 'black', color: 'white', marginBottom: '40px', padding: '10px 30px', borderRadius: '10px'}} onClick={closeDatePicker}>Back to Map</button>
+                <StartCalendar />
+                <StopCalendar />
               </div>
-            </div>
           ): null}
           {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
             <PlotIcon
