@@ -2,18 +2,20 @@ import React, {useState} from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
  
-const StartCalendar = () => {
+const StartCalendar = (props) => {
     
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(new Date());
 
-    console.log(startDate)
+    // console.log("Start Date", props.startDate)
     
     return (
         <DatePicker
             style={{margin: '40px 0%', zIndex: '1000'}}
-            selected={startDate} 
-            onChange={date => setStartDate(date)} 
+            selected={props.startDate} 
+            onChange={date => props.setStartDate(date)} 
             inline
+            showYearDropdown
+            showMonthDropdown
         />
     )
 }
