@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from "react-redux";
-import axios from 'axios';
 
 import RegisterMap from '../RegisterMap';
 import { registration } from '../../store/actions'
@@ -29,7 +28,7 @@ export const Register2 = props => {
     <>
     <div className="overlay">
       <div className="modal page2">
-        <div class="head">
+        <div className="head">
           <h1 className="ir">Geograpics</h1>
         </div>
         <form onSubmit={handleSubmit}>
@@ -41,8 +40,10 @@ export const Register2 = props => {
           </div>
           <table className="group check">
             <tbody>
-              <td><input type="checkbox" className={isPrivate ? 'on' : 'off'} onClick={toggleCheck} /></td>
-              <td><label>Set Account to Private<br /><span>(<em>Only you can view your photos</em>)</span></label></td>
+              <tr>
+                <td><input type="checkbox" className={isPrivate ? 'on' : 'off'} onClick={toggleCheck} /></td>
+                <td><label>Set Account to Private<br /><span>(<em>Only you can view your photos</em>)</span></label></td>
+              </tr>
             </tbody>
           </table>
           <button type="submit">Finish Registration</button>
@@ -59,7 +60,6 @@ export const Register2 = props => {
 };
 
 const mapStateToProps = (state) => {
-	console.log(state.register.user)
   
 	return {
 		isRegistering: state.register.isRegistering,
@@ -67,6 +67,5 @@ const mapStateToProps = (state) => {
     user: state.register.user
 	}
 }
-
 
 export default connect(mapStateToProps, {registration})(Register2);
