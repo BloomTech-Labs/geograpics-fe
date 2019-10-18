@@ -4,11 +4,17 @@ import { connect } from 'react-redux';
 import Loader from "react-loader-spinner";
 import PropTypes from 'prop-types';
 
+import ProfileContainer from './ProfileContainer';
 import PlotIcon from './PlotIcon';
+
+
+import StopCalendar from './StopCalendar'
+import StartCalendar from './StartCalendar'
 import {getPictureObject, refreshPictureObject} from '../store/actions';
 // import Search from '../assets/Path.png'
 import PopupModal from './marker/popup';
 import ProfileBar from './ProfileBar';
+
 
 export const Map = (props) => {
   // console.log('MAP PROPTYPES', props);
@@ -22,6 +28,9 @@ export const Map = (props) => {
     })
     
     const [selectedPark, setSelectedPark] = useState(null);
+
+    const [showProfile, setShowProfile] = useState(false);
+    const [showDatePicker, setShowDatePicker] = useState(true);
 
     useEffect( () => {
         props.getPictureObject();
@@ -43,9 +52,38 @@ export const Map = (props) => {
       setSelectedPark(null)
     }
 
+    const toggleProfile = (e) => {
+      e.preventDefault();
+      setShowProfile(!showProfile)
+    }
+
+    const toggleDatePicker = (e) => {
+      e.preventDefault();
+      setShowDatePicker(!showDatePicker)
+    }
+
+    const closeDatePicker = (e) =>{
+      e.preventDefault()
+      setShowDatePicker(false)
+    }
+
+    const logout = () => {
+        localStorage.clear();
+		    props.history.push('/') 
+    }
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+    
+    const dateFunction = (dateProp) => {
+      const date = new Date(dateProp*1000)
+      console.log(date)
+      console.log(dateProp, "Date Prop")
+      return date.toLocaleString("en-US", options)
+    } 
     const refreshPics = () => {
       props.refreshPictureObject();
     };
+
 
     if(!props.pictureInfo) return null 
     return (
@@ -67,6 +105,19 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
+          <div style={{  Zindex: '50', position: 'absolute', display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
+            <button 
+              onClick={toggleDatePicker} 
+              style={{color: 'white', cursor: 'pointer', border: 'none', marginTop: '120px', marginRight: '37px', Zindex: '50', backgroundColor: 'black', height: '50px', width: '50px', borderRadius: '50%'}}
+            >Date</button>
+          </div>
+          {showDatePicker ? (
+              <div style={{paddingTop:'140px', marginLeft: '85%', position: 'absolute', backgroundColor: 'rgba(255,255,255,0.85)', height: '100vh', width: '300px', zIndex: '1000'}}>
+                <button style={{border: 'none', backgroundColor: 'black', color: 'white', marginBottom: '40px', padding: '10px 30px', borderRadius: '10px'}} onClick={closeDatePicker}>Back to Map</button>
+                <StartCalendar />
+                <StopCalendar />
+              </div>
+          ): null}
           <NavigationControl showCompass showZoom captureScroll captureDrag />
           <ProfileBar {...props} />
           {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
