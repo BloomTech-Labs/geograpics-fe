@@ -1,0 +1,47 @@
+.filter-panel {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    pointer-events: none;
+
+    button {
+        background: #fff;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        font-weight: bold;
+        font-size: 0.875rem;
+        border-radius: 6px;
+        cursor: pointer;
+        appearance: none;
+        pointer-events: auto;
+    }
+}
+
+.date-picker {
+    min-height: 100vh;
+    padding: 0 20px;
+    background: #fff;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    top: 0;
+    right: 0;
+
+    h3 {
+        border-bottom: 1px solid #333;
+    }
+
+    & > div {
+        margin: 2px 0 0 0;
+        padding: 0;
+        color: #333;
+        font-size: 2.5rem;
+        line-height: 1em;
+        appearance: none;
+        cursor: pointer;
+
+        & + div {
+            margin-top: 20px;
+        }
+    }
+}
