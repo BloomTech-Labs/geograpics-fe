@@ -6,13 +6,11 @@ import PropTypes from 'prop-types';
 
 import PlotIcon from './PlotIcon';
 
-
-import StopCalendar from './StopCalendar'
-import StartCalendar from './StartCalendar'
 import {getPictureObject, refreshPictureObject} from '../store/actions';
 // import Search from '../assets/Path.png'
 import PopupModal from './marker/popup';
 import ProfileBar from './ProfileBar';
+import Filter from './Filter/Filter';
 
 
 export const Map = (props) => {
@@ -27,7 +25,6 @@ export const Map = (props) => {
     })
     
     const [selectedPark, setSelectedPark] = useState(null);
-    const [showDatePicker, setShowDatePicker] = useState(false);
 
     // Calender Data
     const [startDate, setStartDate] = useState(null);
@@ -42,13 +39,11 @@ export const Map = (props) => {
     // console.log("Unix Stop", unixStop)
 
     useEffect(() => {
-      startDate &&
-      unixSetStart(startDate.getTime()/1000)
+      startDate ? unixSetStart(startDate.getTime()/1000) : unixSetStart();
     },[startDate])
 
     useEffect(() => {
-      stopDate &&
-      unixSetStop((stopDate.getTime() + 68399000) /1000 )
+      stopDate ? unixSetStop((stopDate.getTime() + 68399000) /1000 ) : unixSetStop()
     },[stopDate])
 
     useEffect( () => {
@@ -83,16 +78,6 @@ export const Map = (props) => {
       setSelectedPark(null)
     }
 
-    const toggleDatePicker = (e) => {
-      e.preventDefault();
-      setShowDatePicker(!showDatePicker)
-    }
-
-    const closeDatePicker = (e) =>{
-      e.preventDefault()
-      setShowDatePicker(false)
-    }
-
     const refreshPics = () => {
       props.refreshPictureObject();
     };
@@ -118,19 +103,7 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
-          <div style={{  Zindex: '50', position: 'absolute', display: 'flex', width: '100%', justifyContent: 'flex-end'}}>
-            <button 
-              onClick={toggleDatePicker} 
-              style={{color: 'white', cursor: 'pointer', border: 'none', marginTop: '120px', marginRight: '37px', Zindex: '50', backgroundColor: 'black', height: '50px', width: '50px', borderRadius: '50%'}}
-            >Date</button>
-          </div>
-          {showDatePicker ? (
-              <div style={{paddingTop:'140px', marginLeft: '85%', position: 'absolute', backgroundColor: 'rgba(255,255,255,0.85)', height: '100vh', width: '300px', zIndex: '1000'}}>
-                <button style={{border: 'none', backgroundColor: 'black', color: 'white', marginBottom: '40px', padding: '10px 30px', borderRadius: '10px'}} onClick={closeDatePicker}>Back to Map</button>
-                <StartCalendar startDate={startDate} setStartDate={setStartDate} />
-                <StopCalendar stopDate={stopDate} setStopDate={setStopDate} />
-              </div>
-          ): null}
+          <Filter {...props} startDate={startDate} stopDate={stopDate} setStartDate={setStartDate} setStopDate={setStopDate} />
           <NavigationControl showCompass showZoom captureScroll captureDrag />
           <ProfileBar {...props} />
           
