@@ -25,7 +25,7 @@
     background: #fff;
     position: absolute;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    z-index: 9999;
+    z-index: 49;
     top: 0;
     right: 0;
 
@@ -90,5 +90,20 @@
         margin-top: 5px;
         position: absolute;
         left: 5px;
+
+        &::after {
+            background: blueviolet
+        }
     }
+
+    .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected {
+        background: blueviolet;
+        border-radius: 50%;
+
+        &:hover {
+            background: blueviolet;
+            border-radius: 50%;
+        }
+    }
+    
 }
