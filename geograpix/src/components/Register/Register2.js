@@ -33,7 +33,7 @@ export const Register2 = props => {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="group">
-            <input type="email" name="email" id="email" placeholder="eMail" onChange={onChangeHandler} value={email} />
+            <input type="email" name="email" id="email" placeholder="eMail@domail.com" onChange={onChangeHandler} value={email} />
             <label htmlFor="username">
                 eMail
             </label>

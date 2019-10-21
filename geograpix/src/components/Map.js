@@ -5,10 +5,13 @@ import Loader from "react-loader-spinner";
 import PropTypes from 'prop-types';
 
 import PlotIcon from './PlotIcon';
+
 import {getPictureObject, refreshPictureObject} from '../store/actions';
 // import Search from '../assets/Path.png'
 import PopupModal from './marker/popup';
 import ProfileBar from './ProfileBar';
+import Filter from './Filter/Filter';
+
 
 export const Map = (props) => {
   // console.log('MAP PROPTYPES', props);
@@ -23,9 +26,41 @@ export const Map = (props) => {
     
     const [selectedPark, setSelectedPark] = useState(null);
 
+    // Calender Data
+    const [startDate, setStartDate] = useState(null);
+    const [stopDate, setStopDate] = useState(null);
+
+    const [unixStart, unixSetStart] = useState()
+    const [unixStop, unixSetStop] = useState()
+
+    const [filteredArray, setFilteredArray] = useState([])
+
+    // console.log("Unix Start", unixStart)
+    // console.log("Unix Stop", unixStop)
+
+    useEffect(() => {
+      startDate ? unixSetStart((startDate.getTime() - 18000000)/1000) : unixSetStart();
+    },[startDate])
+
+    useEffect(() => {
+      stopDate ? unixSetStop((stopDate.getTime() + 68399000) /1000 ) : unixSetStop()
+    },[stopDate])
+
     useEffect( () => {
         props.getPictureObject();
     },[])
+
+    // useEffect( () => {
+    //   console.log('pictures!')
+    //   if(props.pictureInfo.pictures !== undefined) {
+    //     (unixStart && !unixStop) ?
+    //     setFilteredArray(props.pictureInfo.pictures.filter( picture => parseInt(picture.created_time) > unixStart ))
+    //   : (!unixStart && unixStop) ?
+    //     setFilteredArray(props.pictureInfo.pictures.filter( picture => parseInt(picture.created_time) < unixStop ))
+    //   :
+    //     setFilteredArray(props.pictureInfo.pictures.filter( picture => unixStop > parseInt(picture.created_time) > unixStart ))
+    //   }
+    // }, [stopDate])
 
     useEffect(() => {
       const listener = e => {
@@ -47,6 +82,7 @@ export const Map = (props) => {
       props.refreshPictureObject();
     };
 
+
     if(!props.pictureInfo) return null 
     return (
         <div className="App">
@@ -67,20 +103,89 @@ export const Map = (props) => {
             setViewport(viewport);
           }}
         >
+          <Filter {...props} startDate={startDate} stopDate={stopDate} setStartDate={setStartDate} setStopDate={setStopDate} />
           <NavigationControl showCompass showZoom captureScroll captureDrag />
           <ProfileBar {...props} />
-          {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => (
-            <PlotIcon
-              key={index}
-              latitude={parseFloat(marker.latitude)}
-              longitude={parseFloat(marker.longitude)}
-              caption={marker.caption}
-              clickMarker={(e) => {
-                e.preventDefault();
-                setSelectedPark(marker)
-              }}
-            />
-          ))}
+          
+          {/* { (!unixStart && !unixStop) && props.pictureInfo.pictures !== undefined && setFilteredArray(props.pictureInfo.pictures) }
+           { props.pictureInfo.pictures !== undefined &&
+            filteredArray.map((marker, index) => 
+              <PlotIcon
+                key={index}
+                latitude={parseFloat(marker.latitude)}
+                longitude={parseFloat(marker.longitude)}
+                caption={marker.caption}
+                clickMarker={(e) => {
+                  e.preventDefault();
+                  setSelectedPark(marker)
+                }}
+              />
+            )  */}
+          
+
+          {(props.pictureInfo.pictures !== undefined) && props.pictureInfo.pictures.map((marker, index) => {
+
+            if(!unixStart && !unixStop){
+            // console.log(index, "from Insta Time", marker.created_time)
+
+              return(
+                <PlotIcon
+                  key={index}
+                  latitude={parseFloat(marker.latitude)}
+                  longitude={parseFloat(marker.longitude)}
+                  caption={marker.caption}
+                  clickMarker={(e) => {
+                    e.preventDefault();
+                    setSelectedPark(marker)
+                  }}
+                />
+              )
+            } else if( unixStart && !unixStop ){
+              if(parseInt(marker.created_time) > unixStart) {
+                return(
+                  <PlotIcon
+                    key={index}
+                    latitude={parseFloat(marker.latitude)}
+                    longitude={parseFloat(marker.longitude)}
+                    caption={marker.caption}
+                    clickMarker={(e) => {
+                      e.preventDefault();
+                      setSelectedPark(marker)
+                    }}
+                  />
+                )
+              }
+            } else if ( !unixStart && unixStop ) {
+              if(parseInt(marker.created_time) < unixStop) {
+                return(
+                  <PlotIcon
+                    key={index}
+                    latitude={parseFloat(marker.latitude)}
+                    longitude={parseFloat(marker.longitude)}
+                    caption={marker.caption}
+                    clickMarker={(e) => {
+                      e.preventDefault();
+                      setSelectedPark(marker)
+                    }}
+                  />
+                )
+              }
+            } else if(parseInt(marker.created_time) > unixStart && parseInt(marker.created_time) < unixStop) {
+              // console.log("from Insta Time", marker.created_time)
+              return(
+                <PlotIcon
+                  key={index}
+                  latitude={parseFloat(marker.latitude)}
+                  longitude={parseFloat(marker.longitude)}
+                  caption={marker.caption}
+                  clickMarker={(e) => {
+                    e.preventDefault();
+                    setSelectedPark(marker)
+                  }}
+                />
+              )
+            }
+          })}
           {selectedPark ? (
             <PopupModal
             {...props}
