@@ -1,7 +1,7 @@
 .filter-panel {
     position: absolute;
     top: 80px;
-    right: 10px;
+    right: 20px;
     pointer-events: none;
 
     button {
@@ -15,21 +15,19 @@
         appearance: none;
         pointer-events: auto;
     }
+    
 }
 
 .date-picker {
+    width: 280px;
     min-height: 100vh;
     padding: 0 20px;
     background: #fff;
     position: absolute;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    z-index: 9999;
+    z-index: 49;
     top: 0;
     right: 0;
-
-    h3 {
-        border-bottom: 1px solid #333;
-    }
 
     & > div {
         margin: 2px 0 0 0;
@@ -44,4 +42,68 @@
             margin-top: 20px;
         }
     }
+
+    .input {
+        width: 240px;
+        height: 37px;
+        left: 1178px;
+        top: 179px;
+        background: #FFFFFF;
+        border: 1px solid #B7B6B6;
+        border-radius: 5px;
+        padding-left: 30px;
+        background-image: url(../assets/calendar.png);
+        background-position: 200px 4px;
+        background-repeat: no-repeat;
+    }
+
+    h3 {
+        width: 243px;
+        height: 22px;
+        left: 1166px;
+        top: 113px;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        letter-spacing: -0.337647px;
+        color: #000000;
+        margin-top: 75px
+    }
+
+    h4 {
+        width: 60px;
+        height: 16px;
+        left: 1178px;
+        top: 159px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.337647px;
+        color: #444444;
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .react-datepicker__close-icon {
+        margin-top: 5px;
+        position: absolute;
+        left: 5px;
+
+        &::after {
+            background: blueviolet
+        }
+    }
+
+    .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected {
+        background: blueviolet;
+        border-radius: 50%;
+
+        &:hover {
+            background: blueviolet;
+            border-radius: 50%;
+        }
+    }
+    
 }

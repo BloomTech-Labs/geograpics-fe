@@ -4,24 +4,21 @@ import "react-datepicker/dist/react-datepicker.css";
  
 const StopCalendar = (props) => {
     
-    // const [stopDate, setStopDate] = useState(new Date());
-    
-    // console.log("Stop Date", props.stopDate)
-
-    function clearEndDate() {
-        props.setStopDate(null);
-    }
 
     return (
         <>
-            <h4>End Date <button onClick={clearEndDate}>clear</button></h4>
+            <h4>End Date</h4>
             
             <DatePicker
                 selected={props.stopDate} 
                 onChange={date => props.setStopDate(date)}
-                inline 
+                // inline 
                 showYearDropdown
                 showMonthDropdown
+                isClearable
+                className='input'
+                placeholderText="Click Here ..."
+                dateFormat="MMMM d, yyyy"
             />
         </>
     )

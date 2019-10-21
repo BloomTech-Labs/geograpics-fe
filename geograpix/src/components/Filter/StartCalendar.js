@@ -1,27 +1,38 @@
 import React, {useState} from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+
+import img from '../../assets/filter.png'
  
 const StartCalendar = (props) => {
-    
-    // const [startDate, setStartDate] = useState(new Date());
 
-    // console.log("Start Date", props.startDate)
+    // const ExampleCustomInput = ({ value }) => {
+    //     return (
+            
+    //         <div>
+    //             <input />
+    //             <img src={img} alt='test' />
+    //         </div>
 
-    function clearStartDate() {
-        props.setStartDate(null);
-    }
+    //       );
+    // }
     
+
     return (
         <>
-            <h4>Start Date <button onClick={clearStartDate}>clear</button></h4>
+            <h4>Start Date</h4>
             
             <DatePicker
                 selected={props.startDate} 
                 onChange={date => props.setStartDate(date)} 
-                inline
+                // inline
                 showYearDropdown
                 showMonthDropdown
+                className='input'
+                isClearable
+                placeholderText="Click Here ..."
+                dateFormat="MMMM d, yyyy"
+                // customInput={<ExampleCustomInput />}
             />
         </>
     )

@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import StopCalendar from './StopCalendar'
 import StartCalendar from './StartCalendar'
+import ProfileBar from '../ProfileBar'
+
+//media
+import filterImg from '../../assets/filter.png'
 
 const Filter = props => {
     const [showDatePicker, setShowDatePicker] = useState(false);
@@ -20,12 +24,13 @@ const Filter = props => {
     return(
         <>
             <div className="filter-panel">
-                <button onClick={toggleDatePicker}>Filter</button>
+                <button onClick={toggleDatePicker}><img src={filterImg} alt='filter img'/></button>
             </div>
             {showDatePicker ? (
                 <div className="date-picker">
                     <div onClick={closeDatePicker}>&times;</div>
-                    <h3>Filter Pictures</h3>
+                    {/* <ProfileBar {...props}/> */}
+                    <h3>Refine search by date</h3>
                     <StartCalendar startDate={props.startDate} setStartDate={props.setStartDate} />
                     <StopCalendar stopDate={props.stopDate} setStopDate={props.setStopDate} />
                 </div>
