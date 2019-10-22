@@ -1,10 +1,9 @@
 .profile-tab-box{
-  border: 1px solid slategrey; 
   border-radius: 10px; 
   height: 306.7px;
   width: 461px;
   background-color: white;
-  box-shadow:  2px 3px 2px 2px rgba(0,0,0,0.3);
+  box-shadow:  4px 4px 60px rgba(0,0,0,0.25);
   position: absolute;
   top: 100%;
   right: 50%;
@@ -66,7 +65,7 @@
         line-height: 16px;
         letter-spacing: -0.337647px;
         font-size: .8rem;
-        padding-right: 12px;
+        padding-right: 20px;
       }
 
       .web {
@@ -76,7 +75,7 @@
   }
 
   .profile-tab-middle-div{
-    padding: 20px 0%;
+    padding: 10px 0%;
     display: flex;
 
     & > div > .middle-div-details{
@@ -94,10 +93,11 @@
 
   .profile-tab-bottom-div{
     display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
+    padding-top: 10px;
 
     .btn-signout {
+      width: 252.3px;
+      height: 50px;
       padding: .5rem 1rem;
       letter-spacing: 0.0125rem;
       font: bold 1.063rem/1.125em $font-default-stack;
@@ -109,11 +109,14 @@
       appearance: none;
       transition: opacity 0.25s linear; 
       background-color: transparent;
-      border: 0.125em solid #962FBF;
+      color: white;
+      background: linear-gradient(129.24deg, #962FBF 24.78%, #4F5BD5 90%);
+      transition: opacity 0.25s linear, background-color 0.25s linear, filter 0.25s linear;
+      filter:saturate(100%);
+
     
       &:hover {
-        background-color: #962FBF;
-        color: #fff;
+        filter: saturate(150%)
       }
     }
     

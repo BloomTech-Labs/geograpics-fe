@@ -39,7 +39,7 @@ export const Map = (props) => {
     // console.log("Unix Stop", unixStop)
 
     useEffect(() => {
-      startDate ? unixSetStart((startDate.getTime() - 18000000)/1000) : unixSetStart();
+      startDate ? unixSetStart(startDate.getTime()/1000) : unixSetStart();
     },[startDate])
 
     useEffect(() => {

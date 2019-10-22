@@ -21,7 +21,7 @@ export const Profile = props => {
             <p className="top-div-details">{props.pictureInfo.email}</p>
             <div className="profile-tab-middle-div">
               <div>
-                <p className="middle-div-details">{props.pictureInfo.pictures.length - untagged.length} <span>Gpost</span></p>
+                <p className="middle-div-details">{props.pictureInfo.pictures.length - untagged.length} <span>Geo-tagged</span></p>
               </div>
               <div>
                 <p className="middle-div-details">{untagged.length} <span>Untagged Photos</span></p>

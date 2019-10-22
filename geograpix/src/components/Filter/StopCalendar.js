@@ -17,7 +17,7 @@ const StopCalendar = (props) => {
                 showMonthDropdown
                 isClearable
                 className='input'
-                placeholderText="Click Here ..."
+                placeholderText="MM/DD/YYYY"
                 dateFormat="MMMM d, yyyy"
             />
         </>

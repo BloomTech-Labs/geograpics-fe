@@ -30,7 +30,7 @@ const StartCalendar = (props) => {
                 showMonthDropdown
                 className='input'
                 isClearable
-                placeholderText="Click Here ..."
+                placeholderText="MM/DD/YYYY"
                 dateFormat="MMMM d, yyyy"
                 // customInput={<ExampleCustomInput />}
             />
