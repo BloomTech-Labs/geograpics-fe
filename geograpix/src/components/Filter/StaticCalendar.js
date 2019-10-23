@@ -18,6 +18,9 @@ const StaticCalendar = (props) => {
     const startUnix = !stDate ? 'null' : stDate.getTime()
     const stopUnix = !stpDate ? 'null' : stpDate.getTime()
 
+    const highStart = !props.startDate ? new Date(props.startDate) : props.startDate
+    const highStop = !props.stopDate ? new Date(props.stopDate) : props.stopDate
+
     // const stfix = !stDate ? new Date() : stDate
     // const stopfix = !stpDate ? new Date() : stpDate
 
@@ -29,9 +32,10 @@ const StaticCalendar = (props) => {
                 inline
                 minDate={props.startDate}
                 maxDate={addDays(props.startDate, range)}
-                // selected={props.startDate}
                 openToDate={props.startDate}
-                highlightDates={[subDays(!props.startDate ? new Date(props.startDate) : props.startDate, 0), addDays(!props.stopDate ? new Date(props.stopDate) : props.stopDate, 0)]}
+                highlightDates={[subDays(highStart, 0), addDays(highStop, 0)]}
+                startDate={addDays(props.startDate, 1)}
+                endDate={subDays(props.stopDate, 1)}
             />
         </>
     );

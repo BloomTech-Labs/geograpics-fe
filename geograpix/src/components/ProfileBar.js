@@ -30,7 +30,7 @@ const ProfileBar = props => {
             <img className="top-toolbar-thumbnail-photo" src= {props.pictureInfo.profile_pic} alt={props.pictureInfo.username}/>
           </button>
           {ShowProfile ? (
-            <Profile {...props} logout={logout} />
+            <Profile {...props} logout={logout} dark={props.dark}/>
           ): null}
         </div>
       </div>

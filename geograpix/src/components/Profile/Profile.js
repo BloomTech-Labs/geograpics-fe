@@ -7,7 +7,7 @@ export const Profile = props => {
   const untagged = props.pictureInfo.pictures.filter(picture => !picture.latitude)
 
   return(
-      <div className="profile-tab-box">
+      <div className={props.dark ? "profile-tab-dark" : "profile-tab-box"}>
         <div className="profile-tab-top-div">
           <div className="profile-tab-img-div">
             <img className="profile-tab-prof-pic" src= {props.pictureInfo.profile_pic} alt= {props.pictureInfo.username}/>

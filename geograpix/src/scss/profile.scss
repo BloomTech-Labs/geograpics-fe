@@ -1,4 +1,4 @@
-.profile-tab-box{
+.profile-tab-box, .profile-tab-dark {
   border-radius: 10px; 
   height: 306.7px;
   width: 461px;
@@ -140,4 +140,24 @@
       }
     }
   }
+}
+
+.profile-tab-dark {
+  background-color: #232323;
+
+  .web {
+    color: #9bc0f7 !important;
+  }
+
+  p {
+    color: #ccc;
+    letter-spacing: 0.5px !important;
+  }
+
+  .top-div-details-name {
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 100;
+  }
+
 }
