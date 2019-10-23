@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 
 import StopCalendar from './StopCalendar'
 import StartCalendar from './StartCalendar'
+import StaticCalendar from './StaticCalendar'
+import ProfileBar from '../ProfileBar'
+
+//media
+import FilterIcon from '../../assets/filter.svg'
+import Moon from '../../assets/darkmode.svg'
+import Sun from '../../assets/lightmode.svg'
 
 const Filter = props => {
     const [showDatePicker, setShowDatePicker] = useState(false);
@@ -20,14 +27,17 @@ const Filter = props => {
     return(
         <>
             <div className="filter-panel">
-                <button onClick={toggleDatePicker}>Filter</button>
+                <button onClick={toggleDatePicker}><img src={FilterIcon} alt='filter img'/></button>
+                <button><img onClick={()=> props.setDark(!props.dark)} src={props.dark ? Sun : Moon} alt='https://icons8.com'/></button>
             </div>
             {showDatePicker ? (
                 <div className="date-picker">
                     <div onClick={closeDatePicker}>&times;</div>
-                    <h3>Filter Pictures</h3>
+                    {/* <ProfileBar {...props}/> */}
+                    <h3>Refine search by date</h3>
                     <StartCalendar startDate={props.startDate} setStartDate={props.setStartDate} />
                     <StopCalendar stopDate={props.stopDate} setStopDate={props.setStopDate} />
+                    <StaticCalendar startDate={props.startDate} stopDate={props.stopDate}/>
                 </div>
             ): null}
         </>

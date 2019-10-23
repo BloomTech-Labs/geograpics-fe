@@ -1,13 +1,20 @@
 .refresh-pics {
   width: 125px;
   height: 30px;
-  background: red;
-  color: #fff;
+  background: transparent;
+  color: transparent;
   font-weight: bold;
   position: absolute;
   bottom: 40px;
   right: 40px;
   z-index: 9999;
+  appearance: none;
+  border: none;
+
+  &:hover {
+    background: red;
+    color: white;
+  }
 }
 
 .App-header {
@@ -46,7 +53,7 @@
 
     .top-toolbar-logo{
       width: auto;
-      height: 44px; 
+      height: 65px;
       margin: 25px;
       pointer-events: all;
     }
