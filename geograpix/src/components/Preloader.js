@@ -20,7 +20,6 @@ const Preloader = props => {
 
     return(
         <div>
-            In Betweennn
         </div>
     )
 }
