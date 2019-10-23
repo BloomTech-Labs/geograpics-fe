@@ -1,22 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-
-import img from '../../assets/filter.png'
  
-const StartCalendar = (props) => {
-
-    // const ExampleCustomInput = ({ value }) => {
-    //     return (
-            
-    //         <div>
-    //             <input />
-    //             <img src={img} alt='test' />
-    //         </div>
-
-    //       );
-    // }
-    
+const StartCalendar = (props) => {    
 
     return (
         <>
@@ -25,14 +11,14 @@ const StartCalendar = (props) => {
             <DatePicker
                 selected={props.startDate} 
                 onChange={date => props.setStartDate(date)} 
-                // inline
                 showYearDropdown
                 showMonthDropdown
                 className='input'
                 isClearable
                 placeholderText="MM/DD/YYYY"
                 dateFormat="MMMM d, yyyy"
-                // customInput={<ExampleCustomInput />}
+                selectsStart
+                todayButton="Today"
             />
         </>
     )

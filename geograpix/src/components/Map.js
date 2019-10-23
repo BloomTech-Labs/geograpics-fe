@@ -29,6 +29,7 @@ export const Map = (props) => {
     // Calender Data
     const [startDate, setStartDate] = useState(null);
     const [stopDate, setStopDate] = useState(null);
+    const [dark, setDark] = useState(false);
 
     const [unixStart, unixSetStart] = useState()
     const [unixStop, unixSetStop] = useState()
@@ -98,14 +99,22 @@ export const Map = (props) => {
           style={{position: "relative"}}
           {...viewport} 
           mapboxApiAccessToken="pk.eyJ1IjoibGFtYmRhbGFibWFwIiwiYSI6ImNrMGN4cGhpaDAwbXkzaHF2OWV2ODVqeXUifQ.TMRmQN2yzxAX43K5g7Y2TA"
-          mapStyle= "mapbox://styles/lambdalabmap/ck0ogodu804y91cqrfpsac1pz"
+          mapStyle={!dark ? "mapbox://styles/lambdalabmap/ck0ogodu804y91cqrfpsac1pz" : 'mapbox://styles/lambdalabmap/ck22fhnkj2djv1co7ye9w6i1z'}
           onViewportChange={viewport => {
             setViewport(viewport);
           }}
         >
-          <Filter {...props} startDate={startDate} stopDate={stopDate} setStartDate={setStartDate} setStopDate={setStopDate} />
+          <Filter 
+            {...props} 
+            startDate={startDate} 
+            stopDate={stopDate} 
+            setStartDate={setStartDate} 
+            setStopDate={setStopDate}
+            dark={dark}
+            setDark={setDark} 
+          />
           <NavigationControl showCompass showZoom captureScroll captureDrag />
-          <ProfileBar {...props} />
+          <ProfileBar {...props} dark={dark} setDark={setDark} />
           
           {/* { (!unixStart && !unixStop) && props.pictureInfo.pictures !== undefined && setFilteredArray(props.pictureInfo.pictures) }
            { props.pictureInfo.pictures !== undefined &&

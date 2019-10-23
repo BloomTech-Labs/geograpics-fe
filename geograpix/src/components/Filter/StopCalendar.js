@@ -19,6 +19,8 @@ const StopCalendar = (props) => {
                 className='input'
                 placeholderText="MM/DD/YYYY"
                 dateFormat="MMMM d, yyyy"
+                selectsEnd
+                todayButton="Today"
             />
         </>
     )

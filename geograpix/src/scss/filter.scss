@@ -3,6 +3,8 @@
     top: 80px;
     right: 20px;
     pointer-events: none;
+    display: flex;
+    flex-direction: column;
 
     button {
         background: #fff;
@@ -14,12 +16,17 @@
         cursor: pointer;
         appearance: none;
         pointer-events: auto;
+
+        img {
+            height: auto;
+            width: 24px;
+        }
     }
     
 }
 
 .date-picker {
-    width: 350px;
+    width: 380px;
     min-height: 100vh;
     padding: 0 40px;
     background: #fff;
@@ -48,8 +55,8 @@
     }
 
     .input {
-        width: 270px;
-        height: 37px;
+        width: 300px;
+        height: 47px;
         left: 1178px;
         top: 179px;
         background: #FFFFFF;
@@ -57,7 +64,7 @@
         border-radius: 5px;
         padding-left: 30px;
         background-image: url(../assets/calendar.png);
-        background-position: 230px 4px;
+        background-position: 260px 8px;
         background-repeat: no-repeat;
     }
 
@@ -94,13 +101,14 @@
         margin-top: 5px;
         position: absolute;
         left: 5px;
+        top: -3px;
 
         &::after {
             background: blueviolet
         }
     }
 
-    .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected {
+    .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected, .react-datepicker__day--highlighted {
         background: blueviolet;
         border-radius: 50%;
 
@@ -133,5 +141,9 @@
 
     .react-datepicker__year-read-view--selected-year, .react-datepicker__month-read-view--selected-month {
         margin-right: 5px;
+    }
+
+    .react-datepicker {
+        z-index: 0;
     }
 }
