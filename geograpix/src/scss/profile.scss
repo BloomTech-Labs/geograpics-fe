@@ -143,9 +143,21 @@
 }
 
 .profile-tab-dark {
-  background-color: #4a5768;
+  background-color: #232323;
 
   .web {
     color: #9bc0f7 !important;
   }
+
+  p {
+    color: #ccc;
+    letter-spacing: 0.5px !important;
+  }
+
+  .top-div-details-name {
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 100;
+  }
+
 }
