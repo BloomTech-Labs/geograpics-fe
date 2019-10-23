@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Logo from '../assets/logo-geograpics.svg'
+import LogoWhite from '../assets/logo-geograpics-white.svg';
 import Profile from './Profile/Profile';
 
 const ProfileBar = props => {
@@ -22,7 +23,7 @@ const ProfileBar = props => {
   return (
     <div className="top-toolbar">
       <div className="top-toolbar-static">
-        <img className="top-toolbar-logo" src={Logo} alt="Geograpics Logo" />
+        <img className="top-toolbar-logo" src={!props.dark ? Logo : LogoWhite} alt="Geograpics Logo" />
         <div className="top-toolbar-profile-thumbnail">
           {/* <input className="top-toolbar-searchbox" placeholder="Search" type="text" /> // for later */}
           <button className="top-toolbar-profile-button" onClick={toggleProfile}>
