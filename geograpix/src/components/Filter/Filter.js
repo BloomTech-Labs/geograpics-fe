@@ -27,11 +27,11 @@ const Filter = props => {
     return(
         <>
             <div className="filter-panel">
-                <button onClick={toggleDatePicker}><img src={FilterIcon} alt='filter img'/></button>
-                <button><img onClick={()=> props.setDark(!props.dark)} src={props.dark ? Sun : Moon} alt='https://icons8.com'/></button>
+                <button onClick={toggleDatePicker} className={props.dark ? "button-dark" : null}><img src={FilterIcon} alt='filter img'/></button>
+                <button className={props.dark ? "button-dark" : null}><img onClick={()=> props.setDark(!props.dark)} src={props.dark ? Sun : Moon} alt='https://icons8.com'/></button>
             </div>
             {showDatePicker ? (
-                <div className="date-picker">
+                <div className={props.dark ? "date-picker-dark" : "date-picker"}>
                     <div onClick={closeDatePicker}>&times;</div>
                     {/* <ProfileBar {...props}/> */}
                     <h3>Refine search by date</h3>

@@ -1,4 +1,4 @@
-.profile-tab-box{
+.profile-tab-box, .profile-tab-dark {
   border-radius: 10px; 
   height: 306.7px;
   width: 461px;
@@ -139,5 +139,13 @@
         filter: saturate(150%);
       }
     }
+  }
+}
+
+.profile-tab-dark {
+  background-color: #4a5768;
+
+  .web {
+    color: #9bc0f7 !important;
   }
 }
