@@ -11,7 +11,7 @@ export const getPictureObject = () => dispatch => {
   console.log('GET_PICTURE_OBJECT_START')
   dispatch({ type: GET_PICTURE_OBJECT_START });
   axiosWithAuth()
-    .get(`${hostURL}/map/update`)
+    .get(`${hostURL}/map`)
         .then(res => {
           dispatch({ type: GET_PICTURE_OBJECT_SUCCESS, payload: res.data });
           console.log('GET_PICTURE_OBJECT_SUCCESS', res.data)
