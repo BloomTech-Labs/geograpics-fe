@@ -1,6 +1,6 @@
 [build]
 base = "geograpix"
-publish = "geograpix/build/"
+publish = "build/"
 command = "yarn build"
 
 [[redirects]]
