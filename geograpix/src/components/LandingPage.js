@@ -14,7 +14,7 @@ const LandingPage = (props) => {
 
     return(
         <div className="page">
-            <div className="overlay"></div>
+            {/*<div className="overlay"></div>*/}
                 <div className="container">
                     <img src={Logo} className="title" alt="Geograpics Logo" />
                     <h1 className="tagline">Snap. Post. Map.</h1>
